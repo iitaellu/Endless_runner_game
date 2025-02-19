@@ -1,2 +1,5 @@
 res://Scenes/main.tscn
 res://Scripts/Main.cs
+res://Ground.cs
+res://Scenes/ground.tscn
+res://collisionShapes/new_rectangle_shape_2d.tres
