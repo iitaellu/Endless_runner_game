@@ -1,5 +1,4 @@
 res://Scenes/main.tscn
 res://Scenes/ground.tscn
-res://Ground.cs
-res://Scripts/Main.cs
 res://Scripts/Ground.cs
+res://Scripts/Main.cs
