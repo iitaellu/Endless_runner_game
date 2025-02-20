@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ywjo3daf80uc"]
 
-[ext_resource type="Script" path="res://Ground.cs" id="1_b43gd"]
+[ext_resource type="Script" path="res://Scripts/Ground.cs" id="1_b43gd"]
 [ext_resource type="Texture2D" uid="uid://bp80gp5lhosrc" path="res://icons/PNG/forest_pack_05.png" id="2_6jijv"]
 [ext_resource type="Shape2D" uid="uid://5g8chqprsx33" path="res://collisionShapes/new_rectangle_shape_2d.tres" id="3_8mapu"]
 
