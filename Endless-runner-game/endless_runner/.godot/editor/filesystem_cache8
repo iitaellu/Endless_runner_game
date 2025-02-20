@@ -1,7 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1739981873
+::res://::1740065245
+Ground.cs::CSharpScript::-1::1739985956::0::1::::<>Node2D<>::
 icon.svg::CompressedTexture2D::5681809602716916526::1739802561::1739802993::1::::<><>::
-ground.tscn::PackedScene::1730521487247884582::1739982011::0::1::::<><>::
+::res://collisionShapes/::1739985855
+new_rectangle_shape_2d.tres::RectangleShape2D::2120059201099739056::1739985855::0::1::::<><>::
 ::res://icons/::1739904293
 ::res://icons/32x32/::1739904234
 attack.png::CompressedTexture2D::2567186419124059897::1739904215::1739904234::1::::<><>::
@@ -93,7 +95,8 @@ forest_pack_107.png::CompressedTexture2D::1779550261526035515::1739904293::17399
 bg_forest_a.png::CompressedTexture2D::4509590012428548231::1739904293::1739904294::1::::<><>::
 bg_forest_b.png::CompressedTexture2D::4172487393322605003::1739904293::1739904294::1::::<><>::
 bg_forest_c.png::CompressedTexture2D::8750441801039693008::1739904293::1739904294::1::::<><>::
-::res://Scenes/::1739981909
-main.tscn::PackedScene::7777861043503970028::1739981909::0::1::::<><>::res://Scripts/Main.cs
+::res://Scenes/::1739986092
+ground.tscn::PackedScene::1730521487247884582::1739986092::0::1::::<><>::res://Ground.cs<>uid://bp80gp5lhosrc::::res://icons/PNG/forest_pack_05.png<>uid://5g8chqprsx33::::res://collisionShapes/new_rectangle_shape_2d.tres
+main.tscn::PackedScene::7777861043503970028::1739986091::0::1::::<><>::res://Scripts/Main.cs<>uid://ywjo3daf80uc::::res://Scenes/ground.tscn
 ::res://Scripts/::1739804084
 Main.cs::CSharpScript::-1::1739804318::0::1::::<>Node<>::

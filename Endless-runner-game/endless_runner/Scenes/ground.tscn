@@ -22,9 +22,10 @@ shape = ExtResource("3_8mapu")
 position = Vector2(2500, 0)
 
 [node name="GroundSprite" type="Sprite2D" parent="Ground_2"]
-position = Vector2(-1, -4)
-scale = Vector2(19.493, 1)
+position = Vector2(-3.77592, -4)
+scale = Vector2(19.5434, 1)
 texture = ExtResource("2_6jijv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_2"]
+position = Vector2(-9, 0)
 shape = ExtResource("3_8mapu")

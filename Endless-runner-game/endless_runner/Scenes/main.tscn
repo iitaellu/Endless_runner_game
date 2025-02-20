@@ -7,4 +7,4 @@
 script = ExtResource("1_g3gia")
 
 [node name="Ground" parent="." instance=ExtResource("2_i8k23")]
-position = Vector2(1250, 580)
+position = Vector2(0, 609)
