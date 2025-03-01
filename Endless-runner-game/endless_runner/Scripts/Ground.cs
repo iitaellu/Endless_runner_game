@@ -33,13 +33,11 @@ public partial class Ground : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		GD.Print(_texturewidth);
 		_staticBody2D.GlobalPosition += new Vector2(_speed * (float)delta, 0);
 		_staticBody2D2.GlobalPosition += new Vector2(_speed * (float)delta, 0);
 
 		if (_staticBody2D.GlobalPosition.X < -+_texturewidth) {
 			_staticBody2D.GlobalPosition = _staticBody2D2.GlobalPosition + new Vector2(_texturewidth, 0);
-			GD.Print(_texturewidth);
 
 		}
 		if (_staticBody2D2.GlobalPosition.X < -+_texturewidth) {
