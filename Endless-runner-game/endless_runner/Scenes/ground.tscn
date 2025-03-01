@@ -16,6 +16,7 @@ scale = Vector2(19.493, 1)
 texture = ExtResource("2_6jijv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_1"]
+position = Vector2(-1, -4)
 shape = ExtResource("3_8mapu")
 
 [node name="Ground_2" type="StaticBody2D" parent="."]
@@ -27,5 +28,5 @@ scale = Vector2(19.5434, 1)
 texture = ExtResource("2_6jijv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_2"]
-position = Vector2(-9, 0)
+position = Vector2(-4, -5)
 shape = ExtResource("3_8mapu")
