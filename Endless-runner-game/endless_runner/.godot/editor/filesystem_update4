@@ -1,9 +1,8 @@
 res://Scenes/player.tscn
+res://collisionShapes/player/player_crouching.tres
 res://Scenes/main.tscn
 res://Scenes/ground.tscn
 res://Scripts/Ground.cs
-res://Scripts/Main.cs
 res://Scripts/Player.cs
-res://collisionShapes/player/palyer_run.tres
-res://collisionShapes/new_rectangle_shape_2d.tres
-res://collisionShapes/player/player_crouching.tres
+res://Scripts/Main.cs
+res://collisionShapes/player/player_run.tres

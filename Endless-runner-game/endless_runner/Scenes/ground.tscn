@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ywjo3daf80uc"]
 
 [ext_resource type="Script" path="res://Scripts/Ground.cs" id="1_b43gd"]
-[ext_resource type="Texture2D" uid="uid://bp80gp5lhosrc" path="res://icons/PNG/forest_pack_05.png" id="2_6jijv"]
+[ext_resource type="Texture2D" uid="uid://d0jrem5wapo6t" path="res://icons/graphics/ground.png" id="2_2805f"]
 [ext_resource type="Shape2D" uid="uid://5g8chqprsx33" path="res://collisionShapes/new_rectangle_shape_2d.tres" id="3_8mapu"]
 
 [node name="Ground" type="Node2D"]
@@ -11,9 +11,9 @@ _speed = -500.0
 [node name="Ground_1" type="StaticBody2D" parent="."]
 
 [node name="GroundSprite" type="Sprite2D" parent="Ground_1"]
-position = Vector2(-1.99988, -4)
-scale = Vector2(19.493, 1)
-texture = ExtResource("2_6jijv")
+position = Vector2(-1, -12)
+scale = Vector2(0.832875, 0.975)
+texture = ExtResource("2_2805f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_1"]
 position = Vector2(-1, -4)
@@ -23,10 +23,10 @@ shape = ExtResource("3_8mapu")
 position = Vector2(2500, 0)
 
 [node name="GroundSprite" type="Sprite2D" parent="Ground_2"]
-position = Vector2(-3.77592, -4)
-scale = Vector2(19.5434, 1)
-texture = ExtResource("2_6jijv")
+position = Vector2(-0.999737, -12.5)
+scale = Vector2(0.834667, 0.978571)
+texture = ExtResource("2_2805f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_2"]
-position = Vector2(-4, -5)
+position = Vector2(-1, -5)
 shape = ExtResource("3_8mapu")
