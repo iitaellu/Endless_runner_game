@@ -1,0 +1,8 @@
+res://Scenes/player.tscn
+res://collisionShapes/player/player_crouching.tres
+res://Scenes/main.tscn
+res://Scenes/ground.tscn
+res://Scripts/Ground.cs
+res://Scripts/Player.cs
+res://Scripts/Main.cs
+res://collisionShapes/player/player_run.tres
