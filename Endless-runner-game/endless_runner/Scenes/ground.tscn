@@ -34,6 +34,7 @@ shape = ExtResource("3_8mapu")
 
 [node name="ObstacleSpawner" type="Node" parent="."]
 script = ExtResource("4_ngcxf")
+_changeToSpawnHawk = 0.9
 
 [node name="SpawnPoint" type="Node2D" parent="ObstacleSpawner"]
 position = Vector2(1201, -65)
