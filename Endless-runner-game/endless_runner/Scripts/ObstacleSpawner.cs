@@ -55,7 +55,7 @@ private void SpawnHawk(){
 	var hawk = _hawkScene.Instantiate<Hawk>();
 
 	main.AddChild(hawk);
-	var positonY = GetViewport().GetVisibleRect().Size.Y - (float)GD.RandRange(140.0, 150.0);
+	var positonY = GetViewport().GetVisibleRect().Size.Y - (float)GD.RandRange(190.0, 200.0);
 	hawk.Position = new Vector2(_spawnPoint.Position.X, positonY);
 }
 

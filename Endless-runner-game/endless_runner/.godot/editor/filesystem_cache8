@@ -1,46 +1,48 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1741097610
+::res://::1741102953
 icon.svg::CompressedTexture2D::5681809602716916526::1739802561::1740070599::1::::<><>::
 ::res://collisionShapes/::1741097556
 new_rectangle_shape_2d.tres::RectangleShape2D::2120059201099739056::1740846322::0::1::::<><>::
 ::res://collisionShapes/obstacles/::1741097556
 bushCollisionShape.tres::RectangleShape2D::2166357464064998471::1741097556::0::1::::<><>::
-::res://collisionShapes/player/::1741086319
-player_crouching.tres::RectangleShape2D::765807245801028712::1741086319::0::1::::<><>::
-player_run.tres::RectangleShape2D::4980142517610710369::1741086319::0::1::::<><>::
-::res://icons/::1741086319
-::res://icons/graphics/::1741086422
+::res://collisionShapes/player/::1741103011
+player_crouching.tres::RectangleShape2D::765807245801028712::1741103011::0::1::::<><>::
+player_run.tres::RectangleShape2D::4980142517610710369::1741102798::0::1::::<><>::
+::res://icons/::1741102953
+::res://icons/graphics/::1741103213
 attack.png::CompressedTexture2D::3335871868049220035::1741086319::1741086422::1::::<><>::
 bush.png::CompressedTexture2D::5664366360123374276::1741086319::1741086422::1::::<><>::
-crouch1.png::CompressedTexture2D::3983126368065051826::1741086319::1741086422::1::::<><>::
-crouch2.png::CompressedTexture2D::5261093721111483094::1741086319::1741086422::1::::<><>::
+crouch1.png::CompressedTexture2D::7337684255903472237::1741102950::1741102953::1::::<><>::
+crouch2.png::CompressedTexture2D::5261093721111483094::1741102957::1741102957::1::::<><>::
 dead.png::CompressedTexture2D::216395569969579797::1741086319::1741086422::1::::<><>::
 fox run 1.png::CompressedTexture2D::5972665404979380243::1741086319::1741086422::1::::<><>::
 fox run 2.png::CompressedTexture2D::4458115082345024055::1741086319::1741086422::1::::<><>::
 fox run 3.png::CompressedTexture2D::6729880250412996263::1741086319::1741086422::1::::<><>::
 fox run 4.png::CompressedTexture2D::5976424258377599885::1741086319::1741086422::1::::<><>::
 ground.png::CompressedTexture2D::8933602551493820577::1741086319::1741086422::1::::<><>::
-hawk 1.png::CompressedTexture2D::7566786913941701738::1741086319::1741086422::1::::<><>::
-hawk 2.png::CompressedTexture2D::2077741523485856157::1741086319::1741086422::1::::<><>::
-hawk 3.png::CompressedTexture2D::4797362337047477526::1741086319::1741086422::1::::<><>::
+hawk 1.png::CompressedTexture2D::7566786913941701738::1741103209::1741103210::1::::<><>::
+hawk 2.png::CompressedTexture2D::2077741523485856157::1741103211::1741103212::1::::<><>::
+hawk 3.png::CompressedTexture2D::4797362337047477526::1741103213::1741103213::1::::<><>::
 idle1.png::CompressedTexture2D::5535412028348994102::1741086319::1741086422::1::::<><>::
 idle2.png::CompressedTexture2D::1095186607594500845::1741086319::1741086422::1::::<><>::
 idle3.png::CompressedTexture2D::7213111968862341185::1741086319::1741086422::1::::<><>::
-jump1.png::CompressedTexture2D::3087672081318175627::1741086319::1741086422::1::::<><>::
-jump2.png::CompressedTexture2D::8594846155537668934::1741086319::1741086422::1::::<><>::
-jump3.png::CompressedTexture2D::2689603475816756144::1741086319::1741086422::1::::<><>::
-run1.png::CompressedTexture2D::6255736834401344619::1741086319::1741086422::1::::<><>::
-run2.png::CompressedTexture2D::2039407668971416781::1741086319::1741086422::1::::<><>::
-run3.png::CompressedTexture2D::3310299194420169058::1741086319::1741086422::1::::<><>::
-run4.png::CompressedTexture2D::4543047835571655168::1741086319::1741086422::1::::<><>::
-::res://Scenes/::1741097556
-bush.tscn::PackedScene::3879748782721592751::1741097556::0::1::::<><>::res://Scripts/Bush.cs<>uid://cmx4j0b03eqnk::::res://icons/graphics/bush.png<>uid://54nuddxra5t0::::res://collisionShapes/obstacles/bushCollisionShape.tres
-ground.tscn::PackedScene::1730521487247884582::1741097556::0::1::::<><>::res://Scripts/Ground.cs<>uid://d0jrem5wapo6t::::res://icons/graphics/ground.png<>uid://5g8chqprsx33::::res://collisionShapes/new_rectangle_shape_2d.tres<>res://Scripts/ObstacleSpawner.cs
-main.tscn::PackedScene::7777861043503970028::1741094975::0::1::::<><>::res://Scripts/Main.cs<>uid://ywjo3daf80uc::::res://Scenes/ground.tscn<>uid://k773mu6xye66::::res://Scenes/player.tscn
-player.tscn::PackedScene::769942133124573533::1741094975::0::1::::<><>::res://Scripts/Player.cs<>uid://bnr6k7tjpkxnn::::res://icons/graphics/attack.png<>uid://bw0prk2dmhwfy::::res://icons/graphics/crouch1.png<>uid://ck4nosbqbruti::::res://icons/graphics/idle1.png<>uid://purtfkugb6eb::::res://icons/graphics/idle2.png<>uid://cg7rpeltx8npm::::res://icons/graphics/crouch2.png<>uid://da1c5uysk76sb::::res://icons/graphics/idle3.png<>uid://dc3ad7qolcgj::::res://icons/graphics/dead.png<>uid://bj8xrjk8in3el::::res://icons/graphics/jump1.png<>uid://dupn4ixqj8s6i::::res://icons/graphics/jump2.png<>uid://bek4m18y3iiy7::::res://icons/graphics/jump3.png<>uid://cvelco4vixl6j::::res://icons/graphics/run1.png<>uid://4b50m1ob64xd::::res://icons/graphics/run2.png<>uid://bnfse5tmo514q::::res://icons/graphics/run3.png<>uid://cc7ohp6nyn32t::::res://collisionShapes/player/player_run.tres<>uid://b5yxlmhvtfbyu::::res://icons/graphics/run4.png
-::res://Scripts/::1741097556
+jump1.png::CompressedTexture2D::361670967623458602::1741102728::1741102731::1::::<><>::
+jump2.png::CompressedTexture2D::5189745004098231736::1741102735::1741102740::1::::<><>::
+jump3.png::CompressedTexture2D::3340578048843557610::1741102745::1741102748::1::::<><>::
+run1.png::CompressedTexture2D::7322715642768085945::1741102468::1741102476::1::::<><>::
+run2.png::CompressedTexture2D::1649692773849307499::1741102528::1741102533::1::::<><>::
+run3.png::CompressedTexture2D::6290731876977435000::1741102546::1741102548::1::::<><>::
+run4.png::CompressedTexture2D::2672125685872804369::1741102550::1741102553::1::::<><>::
+::res://Scenes/::1741103077
+bush.tscn::PackedScene::3879748782721592751::1741103077::0::1::::<><>::res://Scripts/Bush.cs<>uid://cmx4j0b03eqnk::::res://icons/graphics/bush.png<>uid://54nuddxra5t0::::res://collisionShapes/obstacles/bushCollisionShape.tres
+ground.tscn::PackedScene::1730521487247884582::1741103077::0::1::::<><>::res://Scripts/Ground.cs<>uid://d0jrem5wapo6t::::res://icons/graphics/ground.png<>uid://5g8chqprsx33::::res://collisionShapes/new_rectangle_shape_2d.tres<>res://Scripts/ObstacleSpawner.cs
+hawk.tscn::PackedScene::8558285325681493812::1741103077::0::1::::<><>::uid://df2n40pc2qn5k::::res://icons/graphics/hawk 1.png<>res://Scripts/Hawk.cs<>uid://4uqdm3chuf3b::::res://icons/graphics/hawk 2.png<>uid://cal44epgljnsg::::res://icons/graphics/hawk 3.png
+main.tscn::PackedScene::7777861043503970028::1741103077::0::1::::<><>::res://Scripts/Main.cs<>uid://ywjo3daf80uc::::res://Scenes/ground.tscn<>uid://k773mu6xye66::::res://Scenes/player.tscn
+player.tscn::PackedScene::769942133124573533::1741103077::0::1::::<><>::res://Scripts/Player.cs<>uid://bnr6k7tjpkxnn::::res://icons/graphics/attack.png<>uid://dcsot8k3a8ox6::::res://icons/graphics/crouch1.png<>uid://ck4nosbqbruti::::res://icons/graphics/idle1.png<>uid://purtfkugb6eb::::res://icons/graphics/idle2.png<>uid://cg7rpeltx8npm::::res://icons/graphics/crouch2.png<>uid://da1c5uysk76sb::::res://icons/graphics/idle3.png<>uid://dc3ad7qolcgj::::res://icons/graphics/dead.png<>uid://ffgwyg6cckk5::::res://icons/graphics/jump1.png<>uid://k57y64u8rh1a::::res://collisionShapes/player/player_crouching.tres<>uid://cf67lvlos5c2k::::res://icons/graphics/jump2.png<>uid://bnug3kiv7bssw::::res://icons/graphics/jump3.png<>uid://dclgb6vpp6m1n::::res://icons/graphics/run1.png<>uid://xreg1aako4kt::::res://icons/graphics/run2.png<>uid://cvvjo11l1475u::::res://icons/graphics/run3.png<>uid://becnrwyc24fiv::::res://icons/graphics/run4.png
+::res://Scripts/::1741100233
 Bush.cs::CSharpScript::-1::1741097556::0::1::::<>StaticBody2D<>::
 Ground.cs::CSharpScript::-1::1740846322::0::1::::<>Node2D<>::
+Hawk.cs::CSharpScript::-1::1741101652::0::1::::<>StaticBody2D<>::
 Main.cs::CSharpScript::-1::1740070771::0::1::::<>Node<>::
-ObstacleSpawner.cs::CSharpScript::-1::1741097556::0::1::::<>Node<>::
+ObstacleSpawner.cs::CSharpScript::-1::1741103052::0::1::::<>Node<>::
 Player.cs::CSharpScript::-1::1740846322::0::1::::<>CharacterBody2D<>::

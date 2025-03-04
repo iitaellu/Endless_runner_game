@@ -6,7 +6,7 @@ public partial class Hawk : StaticBody2D
 
 	[Export]
 
-	private float _speed = 800.0f;
+	private float _speed = 650.0f;
 
 	private AnimatedSprite2D _animatedSprite2D;
 

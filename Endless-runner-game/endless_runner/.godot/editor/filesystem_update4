@@ -9,3 +9,5 @@ res://Scripts/Hawk.cs
 res://Scripts/Main.cs
 res://Scripts/Ground.cs
 res://Scripts/Player.cs
+res://collisionShapes/player/player_run.tres
+res://collisionShapes/player/player_crouching.tres
