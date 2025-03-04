@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1741086367
+::res://::1741086421
 icon.svg::CompressedTexture2D::5681809602716916526::1739802561::1740070599::1::::<><>::
 ::res://collisionShapes/::1740846322
 new_rectangle_shape_2d.tres::RectangleShape2D::2120059201099739056::1740846322::0::1::::<><>::
@@ -7,30 +7,30 @@ new_rectangle_shape_2d.tres::RectangleShape2D::2120059201099739056::1740846322::
 player_crouching.tres::RectangleShape2D::765807245801028712::1741086319::0::1::::<><>::
 player_run.tres::RectangleShape2D::4980142517610710369::1741086319::0::1::::<><>::
 ::res://icons/::1741086319
-::res://icons/graphics/::1741086319
-attack.png::CompressedTexture2D::3335871868049220035::1741086319::1741086368::1::::<><>::
-bush.png::CompressedTexture2D::5664366360123374276::1741086319::1741086368::1::::<><>::
-crouch1.png::CompressedTexture2D::3983126368065051826::1741086319::1741086368::1::::<><>::
-crouch2.png::CompressedTexture2D::5261093721111483094::1741086319::1741086368::1::::<><>::
-dead.png::CompressedTexture2D::216395569969579797::1741086319::1741086368::1::::<><>::
-fox run 1.png::CompressedTexture2D::5972665404979380243::1741086319::1741086368::1::::<><>::
-fox run 2.png::CompressedTexture2D::4458115082345024055::1741086319::1741086368::1::::<><>::
-fox run 3.png::CompressedTexture2D::6729880250412996263::1741086319::1741086368::1::::<><>::
-fox run 4.png::CompressedTexture2D::5976424258377599885::1741086319::1741086368::1::::<><>::
-ground.png::CompressedTexture2D::8933602551493820577::1741086319::1741086368::1::::<><>::
-hawk 1.png::CompressedTexture2D::7566786913941701738::1741086319::1741086368::1::::<><>::
-hawk 2.png::CompressedTexture2D::2077741523485856157::1741086319::1741086368::1::::<><>::
-hawk 3.png::CompressedTexture2D::4797362337047477526::1741086319::1741086368::1::::<><>::
-idle1.png::CompressedTexture2D::5535412028348994102::1741086319::1741086368::1::::<><>::
-idle2.png::CompressedTexture2D::1095186607594500845::1741086319::1741086368::1::::<><>::
-idle3.png::CompressedTexture2D::7213111968862341185::1741086319::1741086368::1::::<><>::
-jump1.png::CompressedTexture2D::3087672081318175627::1741086319::1741086368::1::::<><>::
-jump2.png::CompressedTexture2D::8594846155537668934::1741086319::1741086368::1::::<><>::
-jump3.png::CompressedTexture2D::2689603475816756144::1741086319::1741086368::1::::<><>::
-run1.png::CompressedTexture2D::6255736834401344619::1741086319::1741086368::1::::<><>::
-run2.png::CompressedTexture2D::2039407668971416781::1741086319::1741086368::1::::<><>::
-run3.png::CompressedTexture2D::3310299194420169058::1741086319::1741086368::1::::<><>::
-run4.png::CompressedTexture2D::4543047835571655168::1741086319::1741086368::1::::<><>::
+::res://icons/graphics/::1741086368
+attack.png::CompressedTexture2D::3335871868049220035::1741086319::1741086422::1::::<><>::
+bush.png::CompressedTexture2D::5664366360123374276::1741086319::1741086422::1::::<><>::
+crouch1.png::CompressedTexture2D::3983126368065051826::1741086319::1741086422::1::::<><>::
+crouch2.png::CompressedTexture2D::5261093721111483094::1741086319::1741086422::1::::<><>::
+dead.png::CompressedTexture2D::216395569969579797::1741086319::1741086422::1::::<><>::
+fox run 1.png::CompressedTexture2D::5972665404979380243::1741086319::1741086422::1::::<><>::
+fox run 2.png::CompressedTexture2D::4458115082345024055::1741086319::1741086422::1::::<><>::
+fox run 3.png::CompressedTexture2D::6729880250412996263::1741086319::1741086422::1::::<><>::
+fox run 4.png::CompressedTexture2D::5976424258377599885::1741086319::1741086422::1::::<><>::
+ground.png::CompressedTexture2D::8933602551493820577::1741086319::1741086422::1::::<><>::
+hawk 1.png::CompressedTexture2D::7566786913941701738::1741086319::1741086422::1::::<><>::
+hawk 2.png::CompressedTexture2D::2077741523485856157::1741086319::1741086422::1::::<><>::
+hawk 3.png::CompressedTexture2D::4797362337047477526::1741086319::1741086422::1::::<><>::
+idle1.png::CompressedTexture2D::5535412028348994102::1741086319::1741086422::1::::<><>::
+idle2.png::CompressedTexture2D::1095186607594500845::1741086319::1741086422::1::::<><>::
+idle3.png::CompressedTexture2D::7213111968862341185::1741086319::1741086422::1::::<><>::
+jump1.png::CompressedTexture2D::3087672081318175627::1741086319::1741086422::1::::<><>::
+jump2.png::CompressedTexture2D::8594846155537668934::1741086319::1741086422::1::::<><>::
+jump3.png::CompressedTexture2D::2689603475816756144::1741086319::1741086422::1::::<><>::
+run1.png::CompressedTexture2D::6255736834401344619::1741086319::1741086422::1::::<><>::
+run2.png::CompressedTexture2D::2039407668971416781::1741086319::1741086422::1::::<><>::
+run3.png::CompressedTexture2D::3310299194420169058::1741086319::1741086422::1::::<><>::
+run4.png::CompressedTexture2D::4543047835571655168::1741086319::1741086422::1::::<><>::
 ::res://Scenes/::1741086319
 ground.tscn::PackedScene::1730521487247884582::1741086319::0::1::::<><>::res://Scripts/Ground.cs<>uid://d0jrem5wapo6t::::res://icons/graphics/ground.png<>uid://5g8chqprsx33::::res://collisionShapes/new_rectangle_shape_2d.tres
 main.tscn::PackedScene::7777861043503970028::1740946278::0::1::::<><>::res://Scripts/Main.cs<>uid://ywjo3daf80uc::::res://Scenes/ground.tscn<>uid://k773mu6xye66::::res://Scenes/player.tscn

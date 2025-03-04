@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ywjo3daf80uc"]
+[gd_scene load_steps=5 format=3 uid="uid://ywjo3daf80uc"]
 
 [ext_resource type="Script" path="res://Scripts/Ground.cs" id="1_b43gd"]
 [ext_resource type="Texture2D" uid="uid://d0jrem5wapo6t" path="res://icons/graphics/ground.png" id="2_2805f"]
 [ext_resource type="Shape2D" uid="uid://5g8chqprsx33" path="res://collisionShapes/new_rectangle_shape_2d.tres" id="3_8mapu"]
+[ext_resource type="Script" path="res://Scripts/ObstacleSpawner.cs" id="4_ngcxf"]
 
 [node name="Ground" type="Node2D"]
 script = ExtResource("1_b43gd")
@@ -30,3 +31,12 @@ texture = ExtResource("2_2805f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_2"]
 position = Vector2(-1, -5)
 shape = ExtResource("3_8mapu")
+
+[node name="ObstacleSpawner" type="Node" parent="."]
+script = ExtResource("4_ngcxf")
+
+[node name="SpawnPoint" type="Node2D" parent="ObstacleSpawner"]
+position = Vector2(1201, -65)
+
+[node name="Timer" type="Timer" parent="ObstacleSpawner"]
+autostart = true

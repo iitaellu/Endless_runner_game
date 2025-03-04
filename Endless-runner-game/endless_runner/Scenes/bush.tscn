@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvjm5plf66fvj"]
+
+[ext_resource type="Script" path="res://Scripts/Bush.cs" id="1_fuk2j"]
+[ext_resource type="Texture2D" uid="uid://cmx4j0b03eqnk" path="res://icons/graphics/bush.png" id="2_qb8ue"]
+[ext_resource type="Shape2D" uid="uid://54nuddxra5t0" path="res://collisionShapes/obstacles/bushCollisionShape.tres" id="3_wxlen"]
+
+[node name="bush" type="StaticBody2D"]
+script = ExtResource("1_fuk2j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -5.5)
+scale = Vector2(1, 1.17742)
+texture = ExtResource("2_qb8ue")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3.5)
+shape = ExtResource("3_wxlen")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
