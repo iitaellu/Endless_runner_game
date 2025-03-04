@@ -1,8 +1,10 @@
-res://Scenes/player.tscn
-res://collisionShapes/player/player_crouching.tres
-res://Scenes/main.tscn
+res://Scenes/bush.tscn
+res://collisionShapes/obstacles/bushCollisionShape.tres
 res://Scenes/ground.tscn
-res://Scripts/Ground.cs
-res://Scripts/Player.cs
+res://Scenes/main.tscn
+res://Scenes/player.tscn
+res://Scripts/Bush.cs
 res://Scripts/Main.cs
-res://collisionShapes/player/player_run.tres
+res://Scripts/Ground.cs
+res://Scripts/ObstacleSpawner.cs
+res://Scripts/Player.cs

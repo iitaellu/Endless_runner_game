@@ -1,40 +1,40 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1741086198
+::res://::1741086421
 icon.svg::CompressedTexture2D::5681809602716916526::1739802561::1740070599::1::::<><>::
 ::res://collisionShapes/::1740846322
 new_rectangle_shape_2d.tres::RectangleShape2D::2120059201099739056::1740846322::0::1::::<><>::
-::res://collisionShapes/player/::1740923957
-player_crouching.tres::RectangleShape2D::765807245801028712::1740922946::0::1::::<><>::
-player_run.tres::RectangleShape2D::4980142517610710369::1740922868::0::1::::<><>::
-::res://icons/::1741086197
-::res://icons/graphics/::1741085987
-attack.png::CompressedTexture2D::3335871868049220035::1740923951::1741086198::1::::<><>::
-bush.png::CompressedTexture2D::5664366360123374276::1740945740::1741086198::1::::<><>::
-crouch1.png::CompressedTexture2D::3983126368065051826::1740922607::1741086198::1::::<><>::
-crouch2.png::CompressedTexture2D::5261093721111483094::1740922607::1741086198::1::::<><>::
-dead.png::CompressedTexture2D::216395569969579797::1740926003::1741086198::1::::<><>::
-fox run 1.png::CompressedTexture2D::5972665404979380243::1740943874::1741086198::1::::<><>::
-fox run 2.png::CompressedTexture2D::4458115082345024055::1740943880::1741086198::1::::<><>::
-fox run 3.png::CompressedTexture2D::6729880250412996263::1740943885::1741086198::1::::<><>::
-fox run 4.png::CompressedTexture2D::5976424258377599885::1740943888::1741086198::1::::<><>::
-ground.png::CompressedTexture2D::8933602551493820577::1740927270::1741086198::1::::<><>::
-hawk 1.png::CompressedTexture2D::7566786913941701738::1740945082::1741086198::1::::<><>::
-hawk 2.png::CompressedTexture2D::2077741523485856157::1740945085::1741086198::1::::<><>::
-hawk 3.png::CompressedTexture2D::4797362337047477526::1740945087::1741086198::1::::<><>::
-idle1.png::CompressedTexture2D::5535412028348994102::1740925444::1741086198::1::::<><>::
-idle2.png::CompressedTexture2D::1095186607594500845::1740925446::1741086198::1::::<><>::
-idle3.png::CompressedTexture2D::7213111968862341185::1740925478::1741086198::1::::<><>::
-jump1.png::CompressedTexture2D::3087672081318175627::1740921198::1741086198::1::::<><>::
-jump2.png::CompressedTexture2D::8594846155537668934::1740921202::1741086198::1::::<><>::
-jump3.png::CompressedTexture2D::2689603475816756144::1740921200::1741086198::1::::<><>::
-run1.png::CompressedTexture2D::6255736834401344619::1740855958::1741086198::1::::<><>::
-run2.png::CompressedTexture2D::2039407668971416781::1740855960::1741086198::1::::<><>::
-run3.png::CompressedTexture2D::3310299194420169058::1740855962::1741086198::1::::<><>::
-run4.png::CompressedTexture2D::4543047835571655168::1740855964::1741086198::1::::<><>::
-::res://Scenes/::1741086197
-ground.tscn::PackedScene::1730521487247884582::1741086197::0::1::::<><>::res://Scripts/Ground.cs<>uid://d0jrem5wapo6t::::res://icons/graphics/ground.png<>uid://5g8chqprsx33::::res://collisionShapes/new_rectangle_shape_2d.tres
+::res://collisionShapes/player/::1741086319
+player_crouching.tres::RectangleShape2D::765807245801028712::1741086319::0::1::::<><>::
+player_run.tres::RectangleShape2D::4980142517610710369::1741086319::0::1::::<><>::
+::res://icons/::1741086319
+::res://icons/graphics/::1741086368
+attack.png::CompressedTexture2D::3335871868049220035::1741086319::1741086422::1::::<><>::
+bush.png::CompressedTexture2D::5664366360123374276::1741086319::1741086422::1::::<><>::
+crouch1.png::CompressedTexture2D::3983126368065051826::1741086319::1741086422::1::::<><>::
+crouch2.png::CompressedTexture2D::5261093721111483094::1741086319::1741086422::1::::<><>::
+dead.png::CompressedTexture2D::216395569969579797::1741086319::1741086422::1::::<><>::
+fox run 1.png::CompressedTexture2D::5972665404979380243::1741086319::1741086422::1::::<><>::
+fox run 2.png::CompressedTexture2D::4458115082345024055::1741086319::1741086422::1::::<><>::
+fox run 3.png::CompressedTexture2D::6729880250412996263::1741086319::1741086422::1::::<><>::
+fox run 4.png::CompressedTexture2D::5976424258377599885::1741086319::1741086422::1::::<><>::
+ground.png::CompressedTexture2D::8933602551493820577::1741086319::1741086422::1::::<><>::
+hawk 1.png::CompressedTexture2D::7566786913941701738::1741086319::1741086422::1::::<><>::
+hawk 2.png::CompressedTexture2D::2077741523485856157::1741086319::1741086422::1::::<><>::
+hawk 3.png::CompressedTexture2D::4797362337047477526::1741086319::1741086422::1::::<><>::
+idle1.png::CompressedTexture2D::5535412028348994102::1741086319::1741086422::1::::<><>::
+idle2.png::CompressedTexture2D::1095186607594500845::1741086319::1741086422::1::::<><>::
+idle3.png::CompressedTexture2D::7213111968862341185::1741086319::1741086422::1::::<><>::
+jump1.png::CompressedTexture2D::3087672081318175627::1741086319::1741086422::1::::<><>::
+jump2.png::CompressedTexture2D::8594846155537668934::1741086319::1741086422::1::::<><>::
+jump3.png::CompressedTexture2D::2689603475816756144::1741086319::1741086422::1::::<><>::
+run1.png::CompressedTexture2D::6255736834401344619::1741086319::1741086422::1::::<><>::
+run2.png::CompressedTexture2D::2039407668971416781::1741086319::1741086422::1::::<><>::
+run3.png::CompressedTexture2D::3310299194420169058::1741086319::1741086422::1::::<><>::
+run4.png::CompressedTexture2D::4543047835571655168::1741086319::1741086422::1::::<><>::
+::res://Scenes/::1741086319
+ground.tscn::PackedScene::1730521487247884582::1741086319::0::1::::<><>::res://Scripts/Ground.cs<>uid://d0jrem5wapo6t::::res://icons/graphics/ground.png<>uid://5g8chqprsx33::::res://collisionShapes/new_rectangle_shape_2d.tres
 main.tscn::PackedScene::7777861043503970028::1740946278::0::1::::<><>::res://Scripts/Main.cs<>uid://ywjo3daf80uc::::res://Scenes/ground.tscn<>uid://k773mu6xye66::::res://Scenes/player.tscn
-player.tscn::PackedScene::769942133124573533::1741086197::0::1::::<><>::res://Scripts/Player.cs<>uid://bnr6k7tjpkxnn::::res://icons/graphics/attack.png<>uid://bw0prk2dmhwfy::::res://icons/graphics/crouch1.png<>uid://ck4nosbqbruti::::res://icons/graphics/idle1.png<>uid://purtfkugb6eb::::res://icons/graphics/idle2.png<>uid://cg7rpeltx8npm::::res://icons/graphics/crouch2.png<>uid://da1c5uysk76sb::::res://icons/graphics/idle3.png<>uid://dc3ad7qolcgj::::res://icons/graphics/dead.png<>uid://bj8xrjk8in3el::::res://icons/graphics/jump1.png<>uid://dupn4ixqj8s6i::::res://icons/graphics/jump2.png<>uid://bek4m18y3iiy7::::res://icons/graphics/jump3.png<>uid://cvelco4vixl6j::::res://icons/graphics/run1.png<>uid://4b50m1ob64xd::::res://icons/graphics/run2.png<>uid://bnfse5tmo514q::::res://icons/graphics/run3.png<>uid://cc7ohp6nyn32t::::res://collisionShapes/player/player_run.tres<>uid://b5yxlmhvtfbyu::::res://icons/graphics/run4.png
+player.tscn::PackedScene::769942133124573533::1741086319::0::1::::<><>::res://Scripts/Player.cs<>uid://bnr6k7tjpkxnn::::res://icons/graphics/attack.png<>uid://bw0prk2dmhwfy::::res://icons/graphics/crouch1.png<>uid://ck4nosbqbruti::::res://icons/graphics/idle1.png<>uid://purtfkugb6eb::::res://icons/graphics/idle2.png<>uid://cg7rpeltx8npm::::res://icons/graphics/crouch2.png<>uid://da1c5uysk76sb::::res://icons/graphics/idle3.png<>uid://dc3ad7qolcgj::::res://icons/graphics/dead.png<>uid://bj8xrjk8in3el::::res://icons/graphics/jump1.png<>uid://dupn4ixqj8s6i::::res://icons/graphics/jump2.png<>uid://bek4m18y3iiy7::::res://icons/graphics/jump3.png<>uid://cvelco4vixl6j::::res://icons/graphics/run1.png<>uid://4b50m1ob64xd::::res://icons/graphics/run2.png<>uid://bnfse5tmo514q::::res://icons/graphics/run3.png<>uid://cc7ohp6nyn32t::::res://collisionShapes/player/player_run.tres<>uid://b5yxlmhvtfbyu::::res://icons/graphics/run4.png
 ::res://Scripts/::1740846322
 Ground.cs::CSharpScript::-1::1740846322::0::1::::<>Node2D<>::
 Main.cs::CSharpScript::-1::1740070771::0::1::::<>Node<>::
