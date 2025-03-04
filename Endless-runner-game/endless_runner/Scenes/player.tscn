@@ -2,20 +2,20 @@
 
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="1_3s5ls"]
 [ext_resource type="Texture2D" uid="uid://bnr6k7tjpkxnn" path="res://icons/graphics/attack.png" id="2_6uxlp"]
-[ext_resource type="Texture2D" uid="uid://bw0prk2dmhwfy" path="res://icons/graphics/crouch1.png" id="5_5yev8"]
+[ext_resource type="Texture2D" uid="uid://dcsot8k3a8ox6" path="res://icons/graphics/crouch1.png" id="5_5yev8"]
 [ext_resource type="Texture2D" uid="uid://ck4nosbqbruti" path="res://icons/graphics/idle1.png" id="5_fko0u"]
 [ext_resource type="Texture2D" uid="uid://purtfkugb6eb" path="res://icons/graphics/idle2.png" id="6_g1upd"]
 [ext_resource type="Texture2D" uid="uid://cg7rpeltx8npm" path="res://icons/graphics/crouch2.png" id="6_gqp5x"]
 [ext_resource type="Texture2D" uid="uid://da1c5uysk76sb" path="res://icons/graphics/idle3.png" id="7_qbm8p"]
 [ext_resource type="Texture2D" uid="uid://dc3ad7qolcgj" path="res://icons/graphics/dead.png" id="8_say5n"]
-[ext_resource type="Texture2D" uid="uid://bj8xrjk8in3el" path="res://icons/graphics/jump1.png" id="16_r15nw"]
-[ext_resource type="Texture2D" uid="uid://dupn4ixqj8s6i" path="res://icons/graphics/jump2.png" id="17_h50l8"]
-[ext_resource type="Texture2D" uid="uid://bek4m18y3iiy7" path="res://icons/graphics/jump3.png" id="18_vkmcx"]
-[ext_resource type="Texture2D" uid="uid://cvelco4vixl6j" path="res://icons/graphics/run1.png" id="20_ia6eg"]
-[ext_resource type="Texture2D" uid="uid://4b50m1ob64xd" path="res://icons/graphics/run2.png" id="21_s7eku"]
-[ext_resource type="Texture2D" uid="uid://bnfse5tmo514q" path="res://icons/graphics/run3.png" id="22_3lsmq"]
-[ext_resource type="Shape2D" uid="uid://cc7ohp6nyn32t" path="res://collisionShapes/player/player_run.tres" id="22_74enw"]
-[ext_resource type="Texture2D" uid="uid://b5yxlmhvtfbyu" path="res://icons/graphics/run4.png" id="23_7t40t"]
+[ext_resource type="Texture2D" uid="uid://ffgwyg6cckk5" path="res://icons/graphics/jump1.png" id="16_r15nw"]
+[ext_resource type="Shape2D" uid="uid://k57y64u8rh1a" path="res://collisionShapes/player/player_crouching.tres" id="16_rg8cp"]
+[ext_resource type="Texture2D" uid="uid://cf67lvlos5c2k" path="res://icons/graphics/jump2.png" id="17_h50l8"]
+[ext_resource type="Texture2D" uid="uid://bnug3kiv7bssw" path="res://icons/graphics/jump3.png" id="18_vkmcx"]
+[ext_resource type="Texture2D" uid="uid://dclgb6vpp6m1n" path="res://icons/graphics/run1.png" id="20_ia6eg"]
+[ext_resource type="Texture2D" uid="uid://xreg1aako4kt" path="res://icons/graphics/run2.png" id="21_s7eku"]
+[ext_resource type="Texture2D" uid="uid://cvvjo11l1475u" path="res://icons/graphics/run3.png" id="22_3lsmq"]
+[ext_resource type="Texture2D" uid="uid://becnrwyc24fiv" path="res://icons/graphics/run4.png" id="23_7t40t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lu4th"]
 animations = [{
@@ -102,8 +102,8 @@ script = ExtResource("1_3s5ls")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3, -12)
 sprite_frames = SubResource("SpriteFrames_lu4th")
-animation = &"die"
+animation = &"crouch"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4.6875, -13)
-shape = ExtResource("22_74enw")
+position = Vector2(19, -15)
+shape = ExtResource("16_rg8cp")

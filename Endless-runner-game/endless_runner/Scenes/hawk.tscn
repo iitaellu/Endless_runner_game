@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://dt6xydr5qfiwa"]
+
+[ext_resource type="Texture2D" uid="uid://df2n40pc2qn5k" path="res://icons/graphics/hawk 1.png" id="1_2mw8g"]
+[ext_resource type="Script" path="res://Scripts/Hawk.cs" id="1_aph8s"]
+[ext_resource type="Texture2D" uid="uid://4uqdm3chuf3b" path="res://icons/graphics/hawk 2.png" id="2_x3sch"]
+[ext_resource type="Texture2D" uid="uid://cal44epgljnsg" path="res://icons/graphics/hawk 3.png" id="3_7yimi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cp8g0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2mw8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_x3sch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7yimi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_x3sch")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2o403"]
+size = Vector2(119, 91)
+
+[node name="Hawk" type="StaticBody2D"]
+script = ExtResource("1_aph8s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cp8g0")
+autoplay = "default"
+frame = 2
+frame_progress = 0.408312
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -3)
+shape = SubResource("RectangleShape2D_2o403")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

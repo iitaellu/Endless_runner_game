@@ -5,7 +5,11 @@ public partial class ObstacleSpawner : Node
 {
 
 
+	[Export]
+	private float _changeToSpawnHawk = 0.1f;
+
 	private PackedScene _bushScene = GD.Load<PackedScene>("res://Scenes/bush.tscn");
+	private PackedScene _hawkScene = GD.Load<PackedScene>("res://Scenes/hawk.tscn");
 
 	private StaticBody2D _ground1;
 	private StaticBody2D _ground2;
@@ -20,7 +24,7 @@ public partial class ObstacleSpawner : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		//main = GetNode<Node>("/root/main");
+		main = GetNode<Node>("/root/Main");
 		_spawnPoint = GetNode<Node2D>("SpawnPoint");
 		_obstaclespawnTimer = GetNode<Timer>("Timer");
 		_ground1 = GetParent().GetNode<StaticBody2D>("Ground_1");
@@ -34,7 +38,25 @@ public partial class ObstacleSpawner : Node
 	}
 
 private void SpawnObstacle(){
-	SpawnBush();
+
+	Random random = new Random();
+	float randomValue = (float)random.NextDouble();
+
+	if (randomValue <= _changeToSpawnHawk){
+
+		SpawnHawk();
+
+	} else {
+		SpawnBush();
+	}
+}
+
+private void SpawnHawk(){
+	var hawk = _hawkScene.Instantiate<Hawk>();
+
+	main.AddChild(hawk);
+	var positonY = GetViewport().GetVisibleRect().Size.Y - (float)GD.RandRange(190.0, 200.0);
+	hawk.Position = new Vector2(_spawnPoint.Position.X, positonY);
 }
 
 private void SpawnBush(){
