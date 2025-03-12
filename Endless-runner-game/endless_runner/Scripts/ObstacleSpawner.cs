@@ -1,13 +1,15 @@
 using Godot;
 using System;
+using System.Xml.Serialization;
 
 public partial class ObstacleSpawner : Node
 {
-
+	[Export]
+	private float _decreaseSpawnTimeOnDifficultyIncrease = 0.2f;
 
 	[Export]
 	private float _changeToSpawnHawk = 0.2f;
-	private float _changeToSpawnFox = 0.1f;
+	private float _changeToSpawnFox = 0.0f;
 
 	private PackedScene _bushScene = GD.Load<PackedScene>("res://Scenes/bush.tscn");
 	private PackedScene _hawkScene = GD.Load<PackedScene>("res://Scenes/hawk.tscn");
@@ -23,6 +25,8 @@ public partial class ObstacleSpawner : Node
 	private Timer _obstaclespawnTimer;
 	private Node2D _spawnPoint;
 	private Node main;
+
+	private float[] _obstacleSpawnTimeRange = {1f, 2f};
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -58,13 +62,17 @@ private void SpawnObstacle(){
 	else {
 		SpawnBush();
 	}
+
+	_obstaclespawnTimer.Stop();
+	_obstaclespawnTimer.WaitTime = (float)GD.RandRange(_obstacleSpawnTimeRange[0], _obstacleSpawnTimeRange[1]);
+	_obstaclespawnTimer.Start();
 }
 
 private void SpawnHawk(){
 	var hawk = _hawkScene.Instantiate<Hawk>();
 
 	main.AddChild(hawk);
-	var positonY = GetViewport().GetVisibleRect().Size.Y - (float)GD.RandRange(170.0, 180.0);
+	var positonY = GetViewport().GetVisibleRect().Size.Y - (float)GD.RandRange(175.0, 180.0);
 	hawk.Position = new Vector2(_spawnPoint.Position.X, positonY);
 }
 
@@ -87,5 +95,14 @@ private void SpawnBush(){
 
 	bush.GlobalPosition = new Vector2(_spawnPoint.Position.X, parentGround.GlobalPosition.Y - 100);
 }
+
+	public void IncreaseDifficulty() {
+		_changeToSpawnFox += 0.05f;
+		_changeToSpawnHawk += 0.05f;
+		if (_obstacleSpawnTimeRange[0] > 0.5f){
+			_obstacleSpawnTimeRange[0] -= _decreaseSpawnTimeOnDifficultyIncrease;
+			_obstacleSpawnTimeRange[1] -= _decreaseSpawnTimeOnDifficultyIncrease;
+		}
+	}
 
 }

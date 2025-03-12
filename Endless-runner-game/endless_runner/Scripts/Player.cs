@@ -4,6 +4,9 @@ using System;
 public partial class Player : CharacterBody2D
 {
 
+	[Signal]
+	public delegate void ObstacleHitEventHandler();
+
 	[Export]
 	private float _jumpVelocity = -800.0f;
 
@@ -71,7 +74,32 @@ public partial class Player : CharacterBody2D
 		}
 
 		Velocity = velocity;
-		MoveAndSlide();
+		var hasCollided = MoveAndSlide();
+
+		if(!hasCollided) {
+			return;
+		}
+
+		var moveCollider = GetLastSlideCollision().GetCollider();
+
+		// Game Over
+		if ((moveCollider is Hawk) || (moveCollider is Fox) || (moveCollider is Bush)){
+			SetPhysicsProcess(false);
+			SetProcess(false);
+			_animatedSprite.Play("die");
+			EmitSignal(SignalName.ObstacleHit);
+
+			if (moveCollider is Hawk){
+				(moveCollider as Hawk).stop();
+			}
+			if (moveCollider is Fox){
+				(moveCollider as Fox).stop();
+			}
+		}
+
+
+		
+		
 	}
 }
 
