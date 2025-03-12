@@ -6,10 +6,13 @@ public partial class ObstacleSpawner : Node
 
 
 	[Export]
-	private float _changeToSpawnHawk = 0.1f;
+	private float _changeToSpawnHawk = 0.2f;
+	private float _changeToSpawnFox = 0.1f;
 
 	private PackedScene _bushScene = GD.Load<PackedScene>("res://Scenes/bush.tscn");
 	private PackedScene _hawkScene = GD.Load<PackedScene>("res://Scenes/hawk.tscn");
+
+	private PackedScene _foxScene = GD.Load<PackedScene>("res://Scenes/fox.tscn");
 
 	private StaticBody2D _ground1;
 	private StaticBody2D _ground2;
@@ -42,11 +45,17 @@ private void SpawnObstacle(){
 	Random random = new Random();
 	float randomValue = (float)random.NextDouble();
 
-	if (randomValue <= _changeToSpawnHawk){
+	if (randomValue <= _changeToSpawnHawk && randomValue > _changeToSpawnFox){
 
 		SpawnHawk();
 
-	} else {
+	} 
+	if (randomValue <= _changeToSpawnFox){
+
+		SpawnFox();
+
+	}
+	else {
 		SpawnBush();
 	}
 }
@@ -55,10 +64,18 @@ private void SpawnHawk(){
 	var hawk = _hawkScene.Instantiate<Hawk>();
 
 	main.AddChild(hawk);
-	var positonY = GetViewport().GetVisibleRect().Size.Y - (float)GD.RandRange(190.0, 200.0);
+	var positonY = GetViewport().GetVisibleRect().Size.Y - (float)GD.RandRange(170.0, 180.0);
 	hawk.Position = new Vector2(_spawnPoint.Position.X, positonY);
 }
 
+private void SpawnFox(){
+	var fox = _foxScene.Instantiate<Fox>();
+
+	var parentGround = _ground1.GlobalPosition.X > _ground2.GlobalPosition.X ? _ground1 : _ground2;
+
+	main.AddChild(fox);
+	fox.Position = new Vector2(_spawnPoint.Position.X, parentGround.GlobalPosition.Y - 100);
+}
 private void SpawnBush(){
 	var bush = _bushScene.Instantiate<Bush>();
 
