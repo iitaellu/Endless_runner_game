@@ -10,6 +10,7 @@ script = ExtResource("1_b43gd")
 _speed = -500.0
 
 [node name="Ground_1" type="StaticBody2D" parent="."]
+collision_layer = 2
 
 [node name="GroundSprite" type="Sprite2D" parent="Ground_1"]
 position = Vector2(-1, -12)
@@ -22,6 +23,7 @@ shape = ExtResource("3_8mapu")
 
 [node name="Ground_2" type="StaticBody2D" parent="."]
 position = Vector2(2500, 0)
+collision_layer = 2
 
 [node name="GroundSprite" type="Sprite2D" parent="Ground_2"]
 position = Vector2(-0.999737, -12.5)

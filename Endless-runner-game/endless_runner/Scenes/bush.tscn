@@ -5,6 +5,7 @@
 [ext_resource type="Shape2D" uid="uid://54nuddxra5t0" path="res://collisionShapes/obstacles/bushCollisionShape.tres" id="3_wxlen"]
 
 [node name="bush" type="StaticBody2D"]
+collision_layer = 4
 script = ExtResource("1_fuk2j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

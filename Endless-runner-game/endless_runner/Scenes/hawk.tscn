@@ -29,6 +29,7 @@ animations = [{
 size = Vector2(119, 91)
 
 [node name="Hawk" type="StaticBody2D"]
+collision_layer = 4
 script = ExtResource("1_aph8s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

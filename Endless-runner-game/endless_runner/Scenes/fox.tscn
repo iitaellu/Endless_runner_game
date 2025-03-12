@@ -30,6 +30,7 @@ animations = [{
 size = Vector2(138, 64)
 
 [node name="Fox" type="StaticBody2D"]
+collision_layer = 4
 script = ExtResource("1_na6hq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
