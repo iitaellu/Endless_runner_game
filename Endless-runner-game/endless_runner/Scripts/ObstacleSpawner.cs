@@ -82,10 +82,10 @@ private void SpawnObstacle(){
 	*/
 
 		var hawk = _hawkScene.Instantiate<Hawk>();
-	var parentGround = _ground1.GlobalPosition.X > _ground2.GlobalPosition.X ? _ground1 : _ground2;
-    parentGround.AddChild(hawk);
-    var positionY = GetViewport().GetVisibleRect().Size.Y - (float)GD.RandRange(175.0, 180.0);
-    hawk.GlobalPosition = new Vector2(_spawnPoint.GlobalPosition.X, positionY);
+		var parentGround = _ground1.GlobalPosition.X > _ground2.GlobalPosition.X ? _ground1 : _ground2;
+		parentGround.AddChild(hawk);
+		var positionY = GetViewport().GetVisibleRect().Size.Y - (float)GD.RandRange(180.0, 180.0);
+		hawk.GlobalPosition = new Vector2(_spawnPoint.GlobalPosition.X, positionY);
 	}
 
 private void SpawnFox(){
@@ -93,8 +93,8 @@ private void SpawnFox(){
 
 	var parentGround = _ground1.GlobalPosition.X > _ground2.GlobalPosition.X ? _ground1 : _ground2;
 
-	main.AddChild(fox);
-	fox.Position = new Vector2(_spawnPoint.Position.X, parentGround.GlobalPosition.Y - 100);
+	parentGround.AddChild(fox);
+	fox.GlobalPosition = new Vector2(_spawnPoint.GlobalPosition.X, parentGround.GlobalPosition.Y - 100);
 }
 private void SpawnBush(){
 	var bush = _bushScene.Instantiate<Bush>();
