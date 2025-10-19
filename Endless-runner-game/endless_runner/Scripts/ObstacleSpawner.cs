@@ -54,7 +54,7 @@ private void SpawnObstacle(){
 		SpawnHawk();
 
 	} 
-	if (randomValue <= _changeToSpawnFox){
+	else if (randomValue <= _changeToSpawnFox){
 
 		SpawnFox();
 
@@ -68,13 +68,25 @@ private void SpawnObstacle(){
 	_obstaclespawnTimer.Start();
 }
 
-private void SpawnHawk(){
-	var hawk = _hawkScene.Instantiate<Hawk>();
+	private void SpawnHawk()
+	{
+		/*var hawk = _hawkScene.Instantiate<Hawk>();
 
-	main.AddChild(hawk);
-	var positonY = GetViewport().GetVisibleRect().Size.Y - (float)GD.RandRange(175.0, 180.0);
-	hawk.Position = new Vector2(_spawnPoint.Position.X, positonY);
-}
+		//var parentGround = _ground1.GlobalPosition.X > _ground2.GlobalPosition.X ? _ground1 : _ground2;
+
+		main.AddChild(hawk);
+		var positionY = GetViewport().GetVisibleRect().Size.Y - (float)GD.RandRange(175.0, 180.0);
+		hawk.Position = new Vector2(_spawnPoint.Position.X, positionY);
+
+		//hawk.GlobalPosition = new Vector2(_spawnPoint.Position.X, parentGround.GlobalPosition.Y - 100);
+	*/
+
+		var hawk = _hawkScene.Instantiate<Hawk>();
+	var parentGround = _ground1.GlobalPosition.X > _ground2.GlobalPosition.X ? _ground1 : _ground2;
+    parentGround.AddChild(hawk);
+    var positionY = GetViewport().GetVisibleRect().Size.Y - (float)GD.RandRange(175.0, 180.0);
+    hawk.GlobalPosition = new Vector2(_spawnPoint.GlobalPosition.X, positionY);
+	}
 
 private void SpawnFox(){
 	var fox = _foxScene.Instantiate<Fox>();
