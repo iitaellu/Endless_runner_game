@@ -17,7 +17,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="EndContainer" type="VBoxContainer" parent="."]
-anchors_preset = -1
 offset_left = 419.0
 offset_top = 434.0
 offset_right = 719.0
@@ -29,7 +28,6 @@ layout_mode = 2
 texture_normal = ExtResource("1_r57uy")
 
 [node name="StartContainer" type="VBoxContainer" parent="."]
-anchors_preset = -1
 offset_left = 419.0
 offset_top = 280.0
 offset_right = 719.0
@@ -41,7 +39,6 @@ layout_mode = 2
 texture_normal = ExtResource("2_aqtj7")
 
 [node name="CreditsContainer" type="VBoxContainer" parent="."]
-anchors_preset = -1
 offset_left = 832.0
 offset_top = 483.0
 offset_right = 1132.0

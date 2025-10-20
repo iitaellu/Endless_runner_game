@@ -41,8 +41,15 @@ public partial class ObstacleSpawner : Node
 		//_sprite2D = GetNode<Sprite2D>("Sprite2D");
 
 		_obstaclespawnTimer.Timeout += SpawnObstacle;
+		_obstaclespawnTimer.Stop();
 
 	}
+
+	public void StartSpawning()
+{
+    GD.Print("Obstacle spawning started!");
+    _obstaclespawnTimer.Start();
+}
 
 private void SpawnObstacle(){
 

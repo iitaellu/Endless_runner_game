@@ -7,10 +7,31 @@
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_co170")
 
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_left = 960.0
+offset_right = 1149.0
+offset_bottom = 91.0
+
+[node name="ScoreLabel" type="Label" parent="CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.607843, 0.607843, 0.607843, 1)
+theme_override_font_sizes/font_size = 32
+text = "00000
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 423.0
+offset_top = 176.0
+offset_right = -397.0
+offset_bottom = -236.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 16
@@ -18,26 +39,12 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="ScoreLabel" type="Label" parent="MarginContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(0.607843, 0.607843, 0.607843, 1)
-theme_override_font_sizes/font_size = 32
-text = "kjhgfd"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="GameOverContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
+[node name="GameOverContainer" type="VBoxContainer" parent="MarginContainer"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/CenterContainer/GameOverContainer"]
+[node name="Label" type="Label" parent="MarginContainer/GameOverContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.60933, 0.60933, 0.60933, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -46,13 +53,13 @@ text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Restart" type="TextureButton" parent="MarginContainer/CenterContainer/GameOverContainer"]
+[node name="Restart" type="TextureButton" parent="MarginContainer/GameOverContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 texture_normal = ExtResource("2_rnv0f")
 stretch_mode = 5
 
-[node name="Menu" type="TextureButton" parent="MarginContainer/CenterContainer/GameOverContainer"]
+[node name="Menu" type="TextureButton" parent="MarginContainer/GameOverContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 texture_normal = ExtResource("3_opfat")
