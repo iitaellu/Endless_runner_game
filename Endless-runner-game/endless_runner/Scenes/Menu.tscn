@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnbyy36446vjh"]
+
+[ext_resource type="Script" path="res://Scripts/Menu.cs" id="1_ctmm0"]
+[ext_resource type="Texture2D" uid="uid://bmpxcyf54kl2m" path="res://icons/graphics/exit 300x150px.png" id="1_r57uy"]
+[ext_resource type="Texture2D" uid="uid://dyfhujtftut8d" path="res://icons/graphics/start 300x150px.png" id="2_aqtj7"]
+[ext_resource type="Texture2D" uid="uid://coqpqihw05c2c" path="res://icons/graphics/Credits 300x150px.png" id="3_em4e4"]
+
+[node name="Menu" type="Node"]
+script = ExtResource("1_ctmm0")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1151.0
+offset_bottom = 61.0
+theme_override_font_sizes/font_size = 111
+text = "Surviving cat"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EndContainer" type="VBoxContainer" parent="."]
+offset_left = 419.0
+offset_top = 434.0
+offset_right = 719.0
+offset_bottom = 584.0
+
+[node name="Exit" type="TextureButton" parent="EndContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("1_r57uy")
+
+[node name="StartContainer" type="VBoxContainer" parent="."]
+offset_left = 419.0
+offset_top = 280.0
+offset_right = 719.0
+offset_bottom = 430.0
+
+[node name="Start" type="TextureButton" parent="StartContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("2_aqtj7")
+
+[node name="CreditsContainer" type="VBoxContainer" parent="."]
+offset_left = 832.0
+offset_top = 483.0
+offset_right = 1132.0
+offset_bottom = 633.0
+
+[node name="Credits" type="TextureButton" parent="CreditsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("3_em4e4")

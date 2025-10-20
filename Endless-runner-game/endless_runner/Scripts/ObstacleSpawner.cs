@@ -42,6 +42,7 @@ public partial class ObstacleSpawner : Node
 
 		_obstaclespawnTimer.Timeout += SpawnObstacle;
 
+<<<<<<< Updated upstream
 	}
 
 private void SpawnObstacle(){
@@ -57,16 +58,45 @@ private void SpawnObstacle(){
 	if (randomValue <= _changeToSpawnFox){
 
 		SpawnFox();
+=======
+		_obstaclespawnTimer.Stop();
+>>>>>>> Stashed changes
 
 	}
-	else {
-		SpawnBush();
-	}
 
-	_obstaclespawnTimer.Stop();
-	_obstaclespawnTimer.WaitTime = (float)GD.RandRange(_obstacleSpawnTimeRange[0], _obstacleSpawnTimeRange[1]);
-	_obstaclespawnTimer.Start();
-}
+
+	public void StartSpawning()
+	{
+		GD.Print("Obstacle spawning started!");
+		_obstaclespawnTimer.Start();
+	}
+	private void SpawnObstacle()
+	{
+
+		Random random = new Random();
+		float randomValue = (float)random.NextDouble();
+
+		if (randomValue <= _changeToSpawnHawk && randomValue > _changeToSpawnFox)
+		{
+
+			SpawnHawk();
+
+		}
+		else if (randomValue <= _changeToSpawnFox)
+		{
+
+			SpawnFox();
+
+		}
+		else
+		{
+			SpawnBush();
+		}
+
+		_obstaclespawnTimer.Stop();
+		_obstaclespawnTimer.WaitTime = (float)GD.RandRange(_obstacleSpawnTimeRange[0], _obstacleSpawnTimeRange[1]);
+		_obstaclespawnTimer.Start();
+	}
 
 private void SpawnHawk(){
 	var hawk = _hawkScene.Instantiate<Hawk>();

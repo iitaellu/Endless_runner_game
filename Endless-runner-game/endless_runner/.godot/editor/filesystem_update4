@@ -1,9 +1,14 @@
+<<<<<<< Updated upstream
+=======
+res://Scenes/main.tscn
+>>>>>>> Stashed changes
 res://Scenes/ground.tscn
 res://Scenes/main.tscn
 res://Scenes/fox.tscn
 res://Scenes/hawk.tscn
 res://Scenes/bush.tscn
 res://Scenes/player.tscn
+<<<<<<< Updated upstream
 res://Scripts/Fox.cs
 res://Scripts/Player.cs
 res://Scripts/Hawk.cs
@@ -12,4 +17,20 @@ res://Scripts/Ground.cs
 res://Scripts/ObstacleSpawner.cs
 res://Scripts/Bush.cs
 res://Scenes/ui.tscn
+=======
+res://Scenes/ui.tscn
+res://Scenes/Menu.tscn
+res://Scenes/credits.tscn
+res://Scenes/Levels.tscn
+res://Scripts/Credits.cs
+res://Scripts/Player.cs
+res://Scripts/Levels.cs
+res://Scripts/Menu.cs
+res://Scripts/Fox.cs
+res://Scripts/ObstacleSpawner.cs
+res://Scripts/Bush.cs
+res://Scripts/Hawk.cs
+res://Scripts/Ground.cs
+res://Scripts/Main.cs
+>>>>>>> Stashed changes
 res://Scripts/Ui.cs

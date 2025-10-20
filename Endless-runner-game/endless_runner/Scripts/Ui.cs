@@ -43,21 +43,35 @@ public partial class Ui : CanvasLayer
 		};
 
 		_restartButton.Pressed += () => GetTree().ReloadCurrentScene();
+<<<<<<< Updated upstream
+=======
+		_menuButton.Pressed += () => GetTree().ChangeSceneToFile("res://Scenes/Menu.tscn");
+
+		 SetProcess(false);
+>>>>>>> Stashed changes
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 		_pointUpdateTimer += (float)delta;
-		if (_pointUpdateTimer >= _pointupdateInterval) {
+		if (_pointUpdateTimer >= _pointupdateInterval)
+		{
 			_score++;
 			_scoreLabel.Text = $"{_score.ToString("D5")}";
 			_pointUpdateTimer = 0.0f;
 
-			if (_score % _scoreToIncreaseDifficulty == 0){
-			EmitSignal(SignalName.IncreseDifficulty);
+			if (_score % _scoreToIncreaseDifficulty == 0)
+			{
+				EmitSignal(SignalName.IncreseDifficulty);
 			}
 		}
 
 	}
+	
+	public void StartScoring()
+{
+    GD.Print("UI: Scoring started!");
+    SetProcess(true);  // resume _Process loop
+}
 }
