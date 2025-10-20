@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://btl3c84344xkd"]
+[gd_scene load_steps=4 format=3 uid="uid://btl3c84344xkd"]
 
 [ext_resource type="Script" path="res://Scripts/Ui.cs" id="1_co170"]
 [ext_resource type="Texture2D" uid="uid://c2gnwqvwf147" path="res://icons/graphics/destination.png" id="2_rnv0f"]
+[ext_resource type="Texture2D" uid="uid://bmpxcyf54kl2m" path="res://icons/graphics/exit 300x150px.png" id="3_opfat"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_co170")
@@ -50,3 +51,8 @@ unique_name_in_owner = true
 layout_mode = 2
 texture_normal = ExtResource("2_rnv0f")
 stretch_mode = 5
+
+[node name="Menu" type="TextureButton" parent="MarginContainer/CenterContainer/GameOverContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("3_opfat")

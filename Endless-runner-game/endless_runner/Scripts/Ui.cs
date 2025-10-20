@@ -23,6 +23,7 @@ public partial class Ui : CanvasLayer
 	private Player _player;
 
 	private TextureButton _restartButton;
+	private TextureButton _menuButton;
 
 	private VBoxContainer _gameOverContainer;
 
@@ -31,6 +32,7 @@ public partial class Ui : CanvasLayer
 	{
 		_gameOverContainer = GetNode<VBoxContainer>("%GameOverContainer");
 		_restartButton = GetNode<TextureButton>("%Restart");
+		_menuButton = GetNode<TextureButton>("%Menu");
 		_player = GetNode<Player>("/root/Main/Player");
 
 		_scoreLabel = GetNode<Label>("%ScoreLabel");
@@ -43,6 +45,7 @@ public partial class Ui : CanvasLayer
 		};
 
 		_restartButton.Pressed += () => GetTree().ReloadCurrentScene();
+		_menuButton.Pressed += () => GetTree().ChangeSceneToFile("res://Scenes/Menu.tscn");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
