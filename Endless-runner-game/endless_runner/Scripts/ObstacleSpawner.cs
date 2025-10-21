@@ -43,31 +43,7 @@ public partial class ObstacleSpawner : Node
 		_obstaclespawnTimer.Timeout += SpawnObstacle;
 		_obstaclespawnTimer.Stop();
 
-<<<<<<< Updated upstream
-	}
-
-	public void StartSpawning()
-{
-    GD.Print("Obstacle spawning started!");
-    _obstaclespawnTimer.Start();
-}
-
-private void SpawnObstacle(){
-
-	Random random = new Random();
-	float randomValue = (float)random.NextDouble();
-
-	if (randomValue <= _changeToSpawnHawk && randomValue > _changeToSpawnFox){
-
-		SpawnHawk();
-
-	} 
-	else if (randomValue <= _changeToSpawnFox){
-
-		SpawnFox();
-=======
 		_obstaclespawnTimer.Stop();
->>>>>>> Stashed changes
 
 	}
 

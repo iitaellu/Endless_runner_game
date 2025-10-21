@@ -24,8 +24,6 @@ public partial class Ground : Node2D
 
 	private Ui _ui;
 
-	private Levels _levels;
-
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
