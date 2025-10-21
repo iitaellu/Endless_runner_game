@@ -20,9 +20,9 @@ public partial class Ground : Node2D
 
 	private ObstacleSpawner _obstacleSpawner;
 
-	private Ui _ui;
-
 	private Levels _levels;
+
+	private Ui _ui;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -56,12 +56,32 @@ public partial class Ground : Node2D
 			_obstacleSpawner.QueueFree();
 		};
 
-		_ui.IncreseDifficulty += () => {
-			_speed += _speedIncreaseForDifficulty;
-			_obstacleSpawner.IncreaseDifficulty();
+		_ui.IncreseDifficulty += async () => {
+			GD.Print("UI requested difficulty increase and show next level info");
+
+			//Stop the game temporarely
+			_obstacleSpawner.PauseSpawning();
+
+			GD.Print("Lets wait a moment");
+			await ToSignal(GetTree().CreateTimer(2.0f), "timeout");
+
+			_ui.SetProcess(false);
+
+			//Next level data
+			_levels.Visible = true;
+			_levels.ShowNextLevelInfo(() =>
+			{
+				//After finished
+				GD.Print("Level info finished, lets continue game");
+
+				_obstacleSpawner.ResumeSpawning();
+				_ui.SetProcess(true);
+
+				//Increase difficulty
+				_speed += _speedIncreaseForDifficulty;
+				_obstacleSpawner.IncreaseDifficulty();
+			});
 		};
-
-
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
