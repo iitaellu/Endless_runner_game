@@ -1,26 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://5jxuauahwdoq"]
+[gd_scene load_steps=3 format=3 uid="uid://dwt4ct23gp5b2"]
 
-[ext_resource type="Script" path="res://Scripts/Levels.cs" id="1_f5n37"]
-[ext_resource type="Texture2D" uid="uid://dyfhujtftut8d" path="res://icons/graphics/start 300x150px.png" id="2_rnkek"]
+[ext_resource type="Script" path="res://Scripts/Levels.cs" id="1_tlwi5"]
+[ext_resource type="Texture2D" uid="uid://dyfhujtftut8d" path="res://icons/graphics/start 300x150px.png" id="2_qawk3"]
 
-[node name="Levels" type="Node"]
-script = ExtResource("1_f5n37")
+[node name="Levels" type="Node2D"]
+script = ExtResource("1_tlwi5")
+
+[node name="LevelContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+offset_right = 1151.0
+offset_bottom = 40.0
+
+[node name="Level" type="Label" parent="LevelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 106
+text = "Level X"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="InfoContainer" type="MarginContainer" parent="."]
 unique_name_in_owner = true
-visible = false
-offset_left = 51.0
-offset_top = 164.0
-offset_right = 1065.0
-offset_bottom = 398.0
+offset_left = 97.0
+offset_top = 137.0
+offset_right = 1078.0
+offset_bottom = 361.0
 
 [node name="Info" type="Label" parent="InfoContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 46
-text = "This is the info box dd ddd d sefbkjef efjenbfkjsne"
-autowrap_mode = 2
+theme_override_font_sizes/font_size = 51
+text = "This is example texs klkvjnfdjvhdfbdfbf vffbf"
+autowrap_mode = 3
 clip_text = true
 
 [node name="Next" type="TextureButton" parent="InfoContainer"]
@@ -28,21 +40,4 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-texture_normal = ExtResource("2_rnkek")
-
-[node name="LevelContainer" type="MarginContainer" parent="."]
-unique_name_in_owner = true
-visible = false
-offset_left = 60.0
-offset_top = 11.0
-offset_right = 1106.0
-offset_bottom = 162.0
-
-[node name="Level" type="Label" parent="LevelContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 0
-size_flags_stretch_ratio = 0.0
-theme_override_font_sizes/font_size = 106
-text = "Level: X"
-horizontal_alignment = 1
+texture_normal = ExtResource("2_qawk3")
