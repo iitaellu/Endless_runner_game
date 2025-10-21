@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://di2e3mgi3q1gw"]
+
+[ext_resource type="Script" path="res://Scripts/Credits.cs" id="1_lrx5u"]
+[ext_resource type="Texture2D" uid="uid://bmpxcyf54kl2m" path="res://icons/graphics/exit 300x150px.png" id="2_2nkh1"]
+
+[node name="Credits" type="Node"]
+script = ExtResource("1_lrx5u")
+
+[node name="BackContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Back" type="TextureButton" parent="BackContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("2_2nkh1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 109.0
+offset_top = 46.0
+offset_right = 1141.0
+offset_bottom = 633.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = -171
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 0
+
+[node name="Label2" type="Label" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Game designer:				 Ida Kirveskoski
+Graphic Designed: Ida Kirveskoski
+Music:"
+
+[node name="CreditsContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/CreditsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+text = "Credits:"
+horizontal_alignment = 1

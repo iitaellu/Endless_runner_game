@@ -24,6 +24,8 @@ public partial class Ground : Node2D
 
 	private Ui _ui;
 
+	private Levels _levels;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -34,7 +36,7 @@ public partial class Ground : Node2D
 		_staticBody2D = GetNode<StaticBody2D>("Ground_1");
 		_staticBody2D2 = GetNode<StaticBody2D>("Ground_2");
 
-		
+
 		//This part works, when picture is not scaled manually
 		//From .staticBody2d we want create node, whit sprite value from "GroundSprite1 and get its texture and its widght"
 		//_texturewidth = _staticBody2D.GetNode<Sprite2D>("GroundSprite").Texture.GetWidth();

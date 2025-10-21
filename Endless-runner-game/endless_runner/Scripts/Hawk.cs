@@ -6,7 +6,7 @@ public partial class Hawk : StaticBody2D
 
 	[Export]
 
-	private float _speed = 650.0f;
+	private float _speed = 125.0f;
 
 	private AnimatedSprite2D _animatedSprite2D;
 
@@ -22,10 +22,10 @@ public partial class Hawk : StaticBody2D
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	/*public override void _Process(double delta)
 	{
 		Position += new Vector2(-_speed * (float)delta, 0);
-	}
+	}*/
 
 	public void stop() {
 		_speed = 0;

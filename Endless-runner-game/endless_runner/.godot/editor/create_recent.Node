@@ -1,15 +1,8 @@
-HBoxContainer
 TextureButton
-<<<<<<< Updated upstream
-Label
-=======
-Button
 Label
 MarginContainer
->>>>>>> Stashed changes
 VBoxContainer
 CenterContainer
-MarginContainer
 CanvasLayer
 VisibleOnScreenNotifier2D
 CollisionShape2D
@@ -17,9 +10,5 @@ AnimatedSprite2D
 StaticBody2D
 Sprite2D
 Node2D
-<<<<<<< Updated upstream
 Node
 Timer
-CharacterBody2D
-=======
->>>>>>> Stashed changes
