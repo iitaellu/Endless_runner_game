@@ -97,7 +97,7 @@ public partial class Levels : Node2D
 	}
 
 		public void ShowNextLevelInfo(Action onFinished)
-		{
+	{
 		_levelnumber++;
 			if (_levelnumber == 4)
         {
