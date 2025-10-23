@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Endless_runner")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1991f8b25fed755fa8ace0ec0abb1e4274fa31c4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e9a9c3e531a657d917b5b420c134afaa4768fc7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Endless_runner")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Endless_runner")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
