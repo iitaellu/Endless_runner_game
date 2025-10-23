@@ -19,3 +19,10 @@ res://Scripts/Hawk.cs
 res://Scripts/Ground.cs
 res://Scripts/Main.cs
 res://Scripts/ObstacleSpawner.cs
+res://Scenes/hit.tscn
+res://Scenes/attack.tscn
+res://Scripts/Attack.cs
+res://Scenes/finish.tscn
+res://Scripts/Finish.cs
+res://Scenes/end.tscn
+res://Scripts/End.cs

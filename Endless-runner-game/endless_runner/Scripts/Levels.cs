@@ -90,7 +90,7 @@ public partial class Levels : Node2D
 
 			if (_infoID == "level1")
 				EmitSignal(SignalName.LevelInfoFinished);
-			 else
+			else
                 _onFinishedCallback?.Invoke();
 
 		}
@@ -101,8 +101,9 @@ public partial class Levels : Node2D
 		_levelnumber++;
 			if (_levelnumber == 4)
         {
-            GD.Print("Game finished! Returning to Menu.");
-			GetTree().ChangeSceneToFile("res://Scenes/Menu.tscn");
+			GD.Print("Game finished! Returning to Menu.");
+			//GetTree().ChangeSceneToFile("res://Scenes/Menu.tscn");
+			_onFinishedCallback?.Invoke();
         }
 		else
 			ShowLevelInfo(onFinished);

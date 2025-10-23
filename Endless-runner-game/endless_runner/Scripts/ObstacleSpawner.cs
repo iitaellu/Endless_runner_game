@@ -18,6 +18,8 @@ public partial class ObstacleSpawner : Node
 
 	private PackedScene _foxScene = GD.Load<PackedScene>("res://Scenes/fox.tscn");
 
+	private PackedScene _endScene = GD.Load<PackedScene>("res://Scenes/end.tscn");
+
 	private StaticBody2D _ground1;
 	private StaticBody2D _ground2;
 
@@ -26,6 +28,8 @@ public partial class ObstacleSpawner : Node
 
 	private Timer _obstaclespawnTimer;
 	private Node2D _spawnPoint;
+
+	private Boolean finale = false;
 	private Node main;
 
 	private float[] _obstacleSpawnTimeRange = {1f, 2f};
@@ -45,7 +49,7 @@ public partial class ObstacleSpawner : Node
 		_obstaclespawnTimer.Timeout += SpawnObstacle;
 		_obstaclespawnTimer.Stop();
 
-		_obstaclespawnTimer.Stop();
+		//_obstaclespawnTimer.Stop();
 
 	}
 
@@ -60,6 +64,14 @@ public partial class ObstacleSpawner : Node
 
 		Random random = new Random();
 		float randomValue = (float)random.NextDouble();
+
+		if (finale == true)
+        {
+			SpawnEnd();
+			_obstaclespawnTimer.Stop();
+			GD.Print("Finale!!!!");
+			return;
+        }
 
 		if (randomValue <= _changeToSpawnHawk && randomValue > _changeToSpawnFox)
 		{
@@ -85,17 +97,6 @@ public partial class ObstacleSpawner : Node
 
 	private void SpawnHawk()
 	{
-		/*var hawk = _hawkScene.Instantiate<Hawk>();
-
-		//var parentGround = _ground1.GlobalPosition.X > _ground2.GlobalPosition.X ? _ground1 : _ground2;
-
-		main.AddChild(hawk);
-		var positionY = GetViewport().GetVisibleRect().Size.Y - (float)GD.RandRange(175.0, 180.0);
-		hawk.Position = new Vector2(_spawnPoint.Position.X, positionY);
-
-		//hawk.GlobalPosition = new Vector2(_spawnPoint.Position.X, parentGround.GlobalPosition.Y - 100);
-	*/
-
 		var hawk = _hawkScene.Instantiate<Hawk>();
 		var parentGround = _ground1.GlobalPosition.X > _ground2.GlobalPosition.X ? _ground1 : _ground2;
 		parentGround.AddChild(hawk);
@@ -111,7 +112,8 @@ public partial class ObstacleSpawner : Node
 		parentGround.AddChild(fox);
 		fox.GlobalPosition = new Vector2(_spawnPoint.GlobalPosition.X, parentGround.GlobalPosition.Y - 100);
 	}
-	private void SpawnBush(){
+	private void SpawnBush()
+	{
 		var bush = _bushScene.Instantiate<Bush>();
 
 		var parentGround = _ground1.GlobalPosition.X > _ground2.GlobalPosition.X ? _ground1 : _ground2;
@@ -122,6 +124,17 @@ public partial class ObstacleSpawner : Node
 
 		bush.GlobalPosition = new Vector2(_spawnPoint.Position.X, parentGround.GlobalPosition.Y - 100);
 	}
+	
+		public void SpawnEnd()
+    {
+        var end = _endScene.Instantiate<End>();
+
+		var parentGround = _ground1.GlobalPosition.X > _ground2.GlobalPosition.X ? _ground1 : _ground2;
+
+		parentGround.AddChild(end);
+
+		end.GlobalPosition = new Vector2(_spawnPoint.Position.X, parentGround.GlobalPosition.Y - 100);
+    }
 
 	public void IncreaseDifficulty()
 	{
@@ -149,6 +162,11 @@ public partial class ObstacleSpawner : Node
 				_changeToSpawnHawk = 0.6f;
 				_changeToSpawnFox = 0.4f; // 20% foxes, 40% hawks, 40% bushes
 				break;
+
+			case 3:
+				GD.Print("Finale (Goal appear)");
+				finale = true; // 20% foxes, 40% hawks, 40% bushes
+				break;
 		}
     }
 
@@ -158,7 +176,7 @@ public partial class ObstacleSpawner : Node
 		_obstaclespawnTimer.Stop();
 		GD.Print("Spawner paused.");
 	}
-	
+
 	public void ResumeSpawning()
 	{
 		if (!_obstaclespawnTimer.IsStopped())

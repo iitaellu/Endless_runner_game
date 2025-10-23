@@ -35,7 +35,7 @@ public partial class Ground : Node2D
 		_staticBody2D2 = GetNode<StaticBody2D>("Ground_2");
 
 
-		//This part works, when picture is not scaled manually
+		//This part works, when picture is not scaled 
 		//From .staticBody2d we want create node, whit sprite value from "GroundSprite1 and get its texture and its widght"
 		//_texturewidth = _staticBody2D.GetNode<Sprite2D>("GroundSprite").Texture.GetWidth();
 
