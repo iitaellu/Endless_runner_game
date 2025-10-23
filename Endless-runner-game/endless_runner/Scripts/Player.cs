@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Net;
 
 public partial class Player : CharacterBody2D
 {
@@ -21,7 +22,12 @@ public partial class Player : CharacterBody2D
 	private RectangleShape2D _crouchShape = GD.Load<RectangleShape2D>("res://collisionShapes/player/player_crouching.tres");
 
 	private AnimatedSprite2D _animatedSprite;
-    private CollisionShape2D _collisionShape2D;
+	private CollisionShape2D _collisionShape2D;
+
+	private PackedScene _attackScene;
+
+	private PackedScene _endScene;
+	private Attack _activeAttack;
 
     private float _yOffsetCrouch = 30.0f;
     private float _collisionShapeStartYPosition;
@@ -30,14 +36,18 @@ public partial class Player : CharacterBody2D
     public override void _Ready()
     {
 		_animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-        _collisionShape2D = GetNode<CollisionShape2D>("CollisionShape2D");
+		_collisionShape2D = GetNode<CollisionShape2D>("CollisionShape2D");
+		_attackScene = GD.Load<PackedScene>("res://Scenes/attack.tscn");
+		_endScene = GD.Load<PackedScene>("res://Scenes/end.tscn");
         _collisionShape2D.Shape = _runShape;
         _collisionShapeStartYPosition = _collisionShape2D.Position.Y;
     }
 
     public override void _Process(double delta)
-    {
+	{
 		if (_animatedSprite.Animation == "attack" && _animatedSprite.IsPlaying()){
+			//_attack.Visible = true;
+			//_attack.StartAnimation();
 			return;
 		}
         if (IsOnFloor()) {
@@ -59,48 +69,95 @@ public partial class Player : CharacterBody2D
 		}
 	}
 
-    public override void _PhysicsProcess(double delta)
+	public override async void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
-		if (!IsOnFloor()){
+		if (!IsOnFloor())
+		{
 			velocity.Y += gravity * _gravityMultiplier * (float)delta;
 		}
-		if (Input.IsActionJustPressed("jump") && IsOnFloor()){
+		if (Input.IsActionJustPressed("jump") && IsOnFloor())
+		{
 			velocity.Y = _jumpVelocity;
 			_animatedSprite.Play("jump");
 		}
-		if (Input.IsActionJustPressed("attack") && IsOnFloor()){
+		if (Input.IsActionJustPressed("attack") && IsOnFloor())
+		{
 			_animatedSprite.Play("attack");
+			SpawnAttack();
 		}
 
 		Velocity = velocity;
 		var hasCollided = MoveAndSlide();
 
-		if(!hasCollided) {
+		if (!hasCollided)
+		{
 			return;
 		}
 
 		var moveCollider = GetLastSlideCollision().GetCollider();
 
+		//Game finished
+		if (moveCollider is End)
+            {
+				GD.Print("Player got to home!");
+				//await ToSignal(GetTree().CreateTimer(0.3), "timeout");
+				GetTree().ChangeSceneToFile("res://Scenes/finish.tscn");
+				return;
+            }
+
 		// Game Over
-		if ((moveCollider is Hawk) || (moveCollider is Fox) || (moveCollider is Bush)){
+		if ((moveCollider is Hawk) || (moveCollider is Fox) || (moveCollider is Bush))
+		{
+			// Only die if the fox is NOT defeated
+			if (moveCollider is Fox fox && fox.IsDefeated)
+				return;
 			SetPhysicsProcess(false);
 			SetProcess(false);
 			_animatedSprite.Play("die");
 			EmitSignal(SignalName.ObstacleHit);
 
-			if (moveCollider is Hawk){
+			if (moveCollider is Hawk)
+			{
 				(moveCollider as Hawk).stop();
 			}
-			if (moveCollider is Fox){
+			if (moveCollider is Fox)
+			{
 				(moveCollider as Fox).stop();
 			}
 		}
 
-
-		
-		
 	}
+
+	private void SpawnAttack()
+	{
+		// Prevent multiple attacks at once
+		if (_activeAttack != null) return;
+
+		// Instance the attack scene
+		_activeAttack = (Attack)_attackScene.Instantiate();
+
+		// Set position relative to player (e.g. in front of player)
+		_activeAttack.GlobalPosition = GlobalPosition + new Vector2(40, -10); // tweak as needed
+
+		// Add it to the same parent as Player (or to Player as a child)
+		GetParent().AddChild(_activeAttack);
+
+		// Start the attack animation
+		_activeAttack.StartAnimation();
+
+		// Listen for when it's done
+		_activeAttack.AnimationFinished += OnAttackFinished;
+	}
+	
+	private void OnAttackFinished()
+{
+    if (_activeAttack != null)
+    {
+        _activeAttack.QueueFree();
+        _activeAttack = null;
+    }
+}
 }
 
 /*Vector2 velocity = Velocity;

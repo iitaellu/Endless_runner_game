@@ -102,9 +102,7 @@ script = ExtResource("1_3s5ls")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3, -12)
 sprite_frames = SubResource("SpriteFrames_lu4th")
-animation = &"crouch"
-frame = 1
-frame_progress = 0.916662
+animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, -12.5)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvuvis6h7vwf6"
-path="res://.godot/imported/start 300x150px.png-44801ea01a09917680ddaa24b29fae89.ctex"
+uid="uid://cygqwqe51uyha"
+path="res://.godot/imported/hit1.png-9fd92b82102c9d9525faffe2d65bfd1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://collisionShapes/player/start 300x150px.png"
-dest_files=["res://.godot/imported/start 300x150px.png-44801ea01a09917680ddaa24b29fae89.ctex"]
+source_file="res://icons/graphics/hit1.png"
+dest_files=["res://.godot/imported/hit1.png-9fd92b82102c9d9525faffe2d65bfd1e.ctex"]
 
 [params]
 

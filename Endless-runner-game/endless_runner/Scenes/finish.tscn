@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3kt8cabbdiyx"]
+
+[ext_resource type="Texture2D" uid="uid://bmpxcyf54kl2m" path="res://icons/graphics/exit 300x150px.png" id="1_as0ts"]
+[ext_resource type="Script" path="res://Scripts/Finish.cs" id="1_wb5sj"]
+
+[node name="Finish" type="CanvasLayer"]
+script = ExtResource("1_wb5sj")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 281.0
+offset_top = 176.0
+offset_right = 865.0
+offset_bottom = 492.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.689282, 0.710688, 0.694489, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+text = "Finish! 
+You got Home"
+horizontal_alignment = 1
+
+[node name="Finish" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture_normal = ExtResource("1_as0ts")

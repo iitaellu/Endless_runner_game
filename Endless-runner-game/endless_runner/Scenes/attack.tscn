@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://bv52nkeylb3e"]
+
+[ext_resource type="Script" path="res://Scripts/Attack.cs" id="1_suoji"]
+[ext_resource type="Texture2D" uid="uid://cygqwqe51uyha" path="res://icons/graphics/hit1.png" id="2_f0jc1"]
+[ext_resource type="Texture2D" uid="uid://b6svedfrrx5a5" path="res://icons/graphics/hit2.png" id="3_su6q8"]
+[ext_resource type="Texture2D" uid="uid://bnrs4t86xew4a" path="res://icons/graphics/hit3.png" id="4_kqnci"]
+[ext_resource type="Texture2D" uid="uid://doj6nrcblyqfx" path="res://icons/graphics/hit4.png" id="5_1uxpm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3mr50"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f0jc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_su6q8")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kqnci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1uxpm")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_if24e"]
+size = Vector2(142, 65)
+
+[node name="Attack" type="Area2D"]
+position = Vector2(-17, -8)
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_suoji")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(11.5, -2.5)
+scale = Vector2(3.9697, 1.46429)
+sprite_frames = SubResource("SpriteFrames_3mr50")
+animation = &"hit"
+
+[node name="hitCollision" type="CollisionShape2D" parent="."]
+position = Vector2(59, -18.5)
+shape = SubResource("RectangleShape2D_if24e")

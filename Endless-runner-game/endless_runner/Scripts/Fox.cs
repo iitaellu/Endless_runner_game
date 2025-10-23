@@ -12,12 +12,18 @@ public partial class Fox : StaticBody2D
 	private AnimatedSprite2D _animatedSprite2D;
 
 	private VisibleOnScreenNotifier2D _visibleOnScreenNotifier2D;
-	// Called when the node enters the scene tree for the first time.
+
+	private CollisionShape2D _collisionShape2D;
+
+	private bool _isDefeated = false;
+
+	public bool IsDefeated => _isDefeated;
+
 	public override void _Ready()
 	{
 		_animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		_visibleOnScreenNotifier2D = GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
-
+		_collisionShape2D = GetNode<CollisionShape2D>("CollisionShape2D");
 		_visibleOnScreenNotifier2D.ScreenExited += OnScreenExcited;
 
 		
@@ -29,10 +35,28 @@ public partial class Fox : StaticBody2D
 		Position += new Vector2(-_speed * (float)delta, 0);
 	}*/
 
-		public void stop() {
+	public void stop()
+	{
 		_speed = 0;
 		_animatedSprite2D.Stop();
 	}
+
+	/*public void DisableCollision()
+	{
+		if (_collisionShape2D != null)
+		{
+			_collisionShape2D.Disabled = true;
+		}
+	}*/
+	
+	public void OnHit()
+{
+    if (_isDefeated) return; // Already hit
+    _isDefeated = true;
+    _collisionShape2D.SetDeferred("disabled", true);
+    _animatedSprite2D.Modulate = new Color(1, 0.5f, 0.5f); // if you have a hit animation
+    stop();
+}
 
 	private void OnScreenExcited() => QueueFree();
 }
