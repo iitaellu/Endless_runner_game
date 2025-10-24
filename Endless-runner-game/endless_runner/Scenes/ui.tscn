@@ -9,7 +9,7 @@
 script = ExtResource("1_co170")
 
 [node name="CenterContainer2" type="HBoxContainer" parent="."]
-anchors_preset = -1
+anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 845.0
