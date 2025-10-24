@@ -74,7 +74,18 @@ public partial class Player : CharacterBody2D
 		Vector2 velocity = Velocity;
 		if (!IsOnFloor())
 		{
-			velocity.Y += gravity * _gravityMultiplier * (float)delta;
+
+			 if (velocity.Y < 0 && !Input.IsActionPressed("jump"))
+        {
+            // extra gravity to jump shorter
+            velocity.Y += gravity * _gravityMultiplier * 5.0f * (float)delta;
+        }
+        else
+        {
+            // normal gravity while rising or falling
+            velocity.Y += gravity * _gravityMultiplier * (float)delta;
+        }
+			//velocity.Y += gravity * _gravityMultiplier * (float)delta;
 		}
 		if (Input.IsActionJustPressed("jump") && IsOnFloor())
 		{
@@ -99,12 +110,19 @@ public partial class Player : CharacterBody2D
 
 		//Game finished
 		if (moveCollider is End)
-            {
-				GD.Print("Player got to home!");
-				//await ToSignal(GetTree().CreateTimer(0.3), "timeout");
-				GetTree().ChangeSceneToFile("res://Scenes/finish.tscn");
-				return;
-            }
+		{
+			GD.Print("Player got to home!");
+			//await ToSignal(GetTree().CreateTimer(0.3), "timeout");
+			GetTree().ChangeSceneToFile("res://Scenes/finish.tscn");
+			return;
+		}
+			
+			/*if (moveCollider is Collectable)
+        {
+			(moveCollider as Collectable).getPoints();
+			var ui = GetNode<Ui>("/root/Main/UI");
+    		ui.AddPoints(10);
+        }*/
 
 		// Game Over
 		if ((moveCollider is Hawk) || (moveCollider is Fox) || (moveCollider is Bush))
@@ -112,6 +130,7 @@ public partial class Player : CharacterBody2D
 			// Only die if the fox is NOT defeated
 			if (moveCollider is Fox fox && fox.IsDefeated)
 				return;
+				
 			SetPhysicsProcess(false);
 			SetProcess(false);
 			_animatedSprite.Play("die");

@@ -21,6 +21,9 @@ public partial class Fox : StaticBody2D
 
 	public override void _Ready()
 	{
+
+		AddToGroup("obstacles");
+
 		_animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		_visibleOnScreenNotifier2D = GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
 		_collisionShape2D = GetNode<CollisionShape2D>("CollisionShape2D");
@@ -55,7 +58,9 @@ public partial class Fox : StaticBody2D
     _isDefeated = true;
     _collisionShape2D.SetDeferred("disabled", true);
     _animatedSprite2D.Modulate = new Color(1, 0.5f, 0.5f); // if you have a hit animation
-    stop();
+	stop();
+	var ui = GetNode<Ui>("/root/Main/UI");
+	ui.AddPoints(50);
 }
 
 	private void OnScreenExcited() => QueueFree();

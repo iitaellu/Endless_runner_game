@@ -1,18 +1,45 @@
-[gd_scene load_steps=4 format=3 uid="uid://btl3c84344xkd"]
+[gd_scene load_steps=5 format=3 uid="uid://btl3c84344xkd"]
 
 [ext_resource type="Script" path="res://Scripts/Ui.cs" id="1_co170"]
+[ext_resource type="Texture2D" uid="uid://cdbvrdj0e08ab" path="res://icons/graphics/oksa 50x50px.png" id="2_7f6pm"]
 [ext_resource type="Texture2D" uid="uid://c2gnwqvwf147" path="res://icons/graphics/destination.png" id="2_rnv0f"]
 [ext_resource type="Texture2D" uid="uid://bmpxcyf54kl2m" path="res://icons/graphics/exit 300x150px.png" id="3_opfat"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_co170")
 
+[node name="CenterContainer2" type="HBoxContainer" parent="."]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 845.0
+offset_top = -301.0
+offset_right = 924.0
+offset_bottom = -255.0
+grow_vertical = 2
+
+[node name="PointLabel" type="Label" parent="CenterContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.607843, 0.607843, 0.607843, 1)
+theme_override_font_sizes/font_size = 32
+text = "00000
+"
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CenterContainer2"]
+position = Vector2(-28, 21)
+scale = Vector2(0.66, 0.7)
+texture = ExtResource("2_7f6pm")
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
 offset_left = 960.0
 offset_right = 1149.0
 offset_bottom = 91.0
 
-[node name="ScoreLabel" type="Label" parent="CenterContainer"]
+[node name="TimeLabel" type="Label" parent="CenterContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
