@@ -10,7 +10,9 @@ private VisibleOnScreenNotifier2D _visibleOnScreenNotifier2D;
 
     public override void _Ready()
     {
-        base._Ready();
+		base._Ready();
+		
+		AddToGroup("obstacles");
 
 		_visibleOnScreenNotifier2D = GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
 		Sprite2D = GetNode<Sprite2D>("Sprite2D");

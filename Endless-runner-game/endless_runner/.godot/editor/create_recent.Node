@@ -1,5 +1,9 @@
-CollisionShape2D
+Area2D
+AnimatedSprite2D
+VisibleOnScreenNotifier2D
 Sprite2D
+HBoxContainer
+CollisionShape2D
 StaticBody2D
 TextureButton
 Label
@@ -7,8 +11,4 @@ VBoxContainer
 CanvasLayer
 MarginContainer
 CharacterBody2D
-Area2D
-AnimatedSprite2D
 Timer
-CenterContainer
-VisibleOnScreenNotifier2D
