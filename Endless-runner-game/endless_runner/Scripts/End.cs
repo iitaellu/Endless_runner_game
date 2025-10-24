@@ -8,7 +8,9 @@ public Sprite2D Sprite2D;
 public CollisionShape2D CollisionShape2D;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
-    {
+	{
+		
+		AddToGroup("obstacles");
         Sprite2D = GetNode<Sprite2D>("Sprite2D");
 		CollisionShape2D = GetNode<CollisionShape2D>("CollisionShape2D");
     }

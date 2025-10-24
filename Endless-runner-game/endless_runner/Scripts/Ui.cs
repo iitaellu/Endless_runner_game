@@ -9,7 +9,7 @@ public partial class Ui : CanvasLayer
 	public delegate void IncreseDifficultyEventHandler();
 
 	[Export]
-	private int _scoreToIncreaseDifficulty = 60;	
+	private int _scoreToIncreaseDifficulty = 60;
 
 	[Export]
 	private float _pointupdateInterval = 0.3f;
@@ -18,7 +18,11 @@ public partial class Ui : CanvasLayer
 
 	private Label _scoreLabel;
 
+	private Label _pointLabel;
+
 	private int _score;
+
+	private int _points;
 
 	private Player _player;
 
@@ -34,20 +38,22 @@ public partial class Ui : CanvasLayer
 		_restartButton = GetNode<TextureButton>("%Restart");
 		_menuButton = GetNode<TextureButton>("%Menu");
 		_player = GetNode<Player>("/root/Main/Player");
-
-		_scoreLabel = GetNode<Label>("%ScoreLabel");
+		_scoreLabel = GetNode<Label>("%TimeLabel");
+		_pointLabel = GetNode<Label>("%PointLabel");
 		_score = 0;
+		_points = 0;
 		_scoreLabel.Text = $"{_score.ToString("D5")}";
 
-		_player.ObstacleHit += () => {
+		_player.ObstacleHit += () =>
+		{
 			_gameOverContainer.Visible = true;
 			SetProcess(false);
 		};
 
 		_restartButton.Pressed += () => GetTree().ReloadCurrentScene();
 		_menuButton.Pressed += () => GetTree().ChangeSceneToFile("res://Scenes/Menu.tscn");
-	
-		 SetProcess(false);
+
+		SetProcess(false);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -67,10 +73,16 @@ public partial class Ui : CanvasLayer
 		}
 
 	}
-	
+
 	public void StartScoring()
-{
-    GD.Print("UI: Scoring started!");
-    SetProcess(true);  // resume _Process loop
-}
+	{
+		GD.Print("UI: Scoring started!");
+		SetProcess(true);  // resume _Process loop
+	}
+
+public void AddPoints(int amount)
+    {
+		_points += amount;
+		_pointLabel.Text = $"{_points.ToString("D5")}";
+    }
 }
