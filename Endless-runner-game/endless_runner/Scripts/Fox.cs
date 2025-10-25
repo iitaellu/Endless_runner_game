@@ -60,7 +60,8 @@ public partial class Fox : StaticBody2D
     _animatedSprite2D.Modulate = new Color(1, 0.5f, 0.5f); // if you have a hit animation
 	stop();
 	var ui = GetNode<Ui>("/root/Main/UI");
-	ui.AddPoints(50);
+		ui.AddPoints(50);
+		GetNode<GlobalScore>("/root/GlobalScore").AddScore(50);
 }
 
 	private void OnScreenExcited() => QueueFree();

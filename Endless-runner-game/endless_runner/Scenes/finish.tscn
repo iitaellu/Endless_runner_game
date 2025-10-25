@@ -7,10 +7,10 @@
 script = ExtResource("1_wb5sj")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-offset_left = 281.0
-offset_top = 176.0
-offset_right = 865.0
-offset_bottom = 492.0
+offset_left = 403.0
+offset_top = 73.0
+offset_right = 724.0
+offset_bottom = 190.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -24,9 +24,79 @@ text = "Finish!
 You got Home"
 horizontal_alignment = 1
 
-[node name="Finish" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+[node name="Finish" type="TextureButton" parent="."]
 unique_name_in_owner = true
-layout_mode = 2
+offset_left = 417.0
+offset_top = 415.0
+offset_right = 717.0
+offset_bottom = 565.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 texture_normal = ExtResource("1_as0ts")
+
+[node name="ScoreBoard" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 301.0
+offset_top = 195.0
+offset_right = 837.0
+offset_bottom = 376.0
+
+[node name="Panel" type="Panel" parent="ScoreBoard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScoreBoard"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 11.0
+offset_top = 55.0
+offset_right = -8.0
+offset_bottom = 155.0
+grow_horizontal = 2
+
+[node name="1place" type="Label" parent="ScoreBoard/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "1st palce data"
+
+[node name="2place" type="Label" parent="ScoreBoard/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "2nd place data"
+
+[node name="3place" type="Label" parent="ScoreBoard/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "3rd place data"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScoreBoard"]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 2.0
+offset_bottom = 49.0
+grow_horizontal = 2
+text = "Top 3 Scores"
+
+[node name="Label" type="Label" parent="ScoreBoard"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 38.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+text = "Top 3 scores"
+horizontal_alignment = 1
+vertical_alignment = 1

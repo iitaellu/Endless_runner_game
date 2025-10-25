@@ -30,6 +30,7 @@ public partial class Collectable : Area2D
 		{
 			var ui = GetNode<Ui>("/root/Main/UI");
 			ui.AddPoints(10);
+			GetNode<GlobalScore>("/root/GlobalScore").AddScore(10);
 			QueueFree(); // disappear immediately
 		}
 	}
