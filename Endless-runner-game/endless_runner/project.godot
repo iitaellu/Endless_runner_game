@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/main.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalScore="*res://Scripts/GlobalScore.cs"
+
 [dotnet]
 
 project/assembly_name="Endless_runner"

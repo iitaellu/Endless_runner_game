@@ -34,7 +34,8 @@ public partial class Player : CharacterBody2D
 
 
     public override void _Ready()
-    {
+	{
+		GetNode<GlobalScore>("/root/GlobalScore").ResetScore();
 		_animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		_collisionShape2D = GetNode<CollisionShape2D>("CollisionShape2D");
 		_attackScene = GD.Load<PackedScene>("res://Scenes/attack.tscn");
@@ -112,6 +113,7 @@ public partial class Player : CharacterBody2D
 		if (moveCollider is End)
 		{
 			GD.Print("Player got to home!");
+			GetNode<GlobalScore>("/root/GlobalScore").SaveScore();
 			//await ToSignal(GetTree().CreateTimer(0.3), "timeout");
 			GetTree().ChangeSceneToFile("res://Scenes/finish.tscn");
 			return;

@@ -1,3 +1,8 @@
+Label
+Panel
+RichTextLabel
+VBoxContainer
+Control
 Area2D
 AnimatedSprite2D
 VisibleOnScreenNotifier2D
@@ -6,9 +11,4 @@ HBoxContainer
 CollisionShape2D
 StaticBody2D
 TextureButton
-Label
-VBoxContainer
 CanvasLayer
-MarginContainer
-CharacterBody2D
-Timer
