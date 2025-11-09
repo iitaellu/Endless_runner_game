@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://btl3c84344xkd"]
 
 [ext_resource type="Script" path="res://Scripts/Ui.cs" id="1_co170"]
-[ext_resource type="Texture2D" uid="uid://cdbvrdj0e08ab" path="res://icons/graphics/oksa 50x50px.png" id="2_7f6pm"]
-[ext_resource type="Texture2D" uid="uid://c2gnwqvwf147" path="res://icons/graphics/destination.png" id="2_rnv0f"]
-[ext_resource type="Texture2D" uid="uid://bmpxcyf54kl2m" path="res://icons/graphics/exit 300x150px.png" id="3_opfat"]
+[ext_resource type="Texture2D" uid="uid://xnlo8qkpe3ga" path="res://icons/graphics/star/bigstar.png" id="2_seeap"]
+[ext_resource type="Texture2D" uid="uid://cq07mqv0timih" path="res://icons/graphics/buttons/startbutton.png" id="3_y7djt"]
+[ext_resource type="Texture2D" uid="uid://c2viuhpgrfbjp" path="res://icons/graphics/buttons/Exitbutton.png" id="4_01rrw"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_co170")
@@ -30,9 +30,9 @@ text = "00000
 vertical_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="CenterContainer2"]
-position = Vector2(-28, 21)
+position = Vector2(-20, 23)
 scale = Vector2(0.66, 0.7)
-texture = ExtResource("2_7f6pm")
+texture = ExtResource("2_seeap")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 offset_left = 960.0
@@ -75,18 +75,20 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.60933, 0.60933, 0.60933, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 33
-text = "Game Over"
+theme_override_font_sizes/font_size = 66
+text = "Game Over!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Restart" type="TextureButton" parent="MarginContainer/GameOverContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-texture_normal = ExtResource("2_rnv0f")
+texture_normal = ExtResource("3_y7djt")
 stretch_mode = 5
 
 [node name="Menu" type="TextureButton" parent="MarginContainer/GameOverContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-texture_normal = ExtResource("3_opfat")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_01rrw")

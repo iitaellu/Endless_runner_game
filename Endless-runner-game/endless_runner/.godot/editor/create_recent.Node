@@ -1,5 +1,6 @@
-Label
+TextureButton
 Panel
+Label
 RichTextLabel
 VBoxContainer
 Control
@@ -10,5 +11,4 @@ Sprite2D
 HBoxContainer
 CollisionShape2D
 StaticBody2D
-TextureButton
 CanvasLayer
