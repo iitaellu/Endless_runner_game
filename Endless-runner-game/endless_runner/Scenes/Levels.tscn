@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dwt4ct23gp5b2"]
 
 [ext_resource type="Script" path="res://Scripts/Levels.cs" id="1_tlwi5"]
-[ext_resource type="Texture2D" uid="uid://dyfhujtftut8d" path="res://icons/graphics/start 300x150px.png" id="2_qawk3"]
+[ext_resource type="Texture2D" uid="uid://b86ni6xga2nli" path="res://icons/graphics/buttons/Nextbutton.png" id="2_jr28e"]
 
 [node name="Levels" type="Node2D"]
 script = ExtResource("1_tlwi5")
@@ -40,4 +40,4 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-texture_normal = ExtResource("2_qawk3")
+texture_normal = ExtResource("2_jr28e")

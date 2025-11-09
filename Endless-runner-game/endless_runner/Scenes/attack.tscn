@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://bv52nkeylb3e"]
 
 [ext_resource type="Script" path="res://Scripts/Attack.cs" id="1_suoji"]
-[ext_resource type="Texture2D" uid="uid://cygqwqe51uyha" path="res://icons/graphics/hit1.png" id="2_f0jc1"]
-[ext_resource type="Texture2D" uid="uid://b6svedfrrx5a5" path="res://icons/graphics/hit2.png" id="3_su6q8"]
-[ext_resource type="Texture2D" uid="uid://bnrs4t86xew4a" path="res://icons/graphics/hit3.png" id="4_kqnci"]
-[ext_resource type="Texture2D" uid="uid://doj6nrcblyqfx" path="res://icons/graphics/hit4.png" id="5_1uxpm"]
+[ext_resource type="Texture2D" uid="uid://cygqwqe51uyha" path="res://icons/graphics/hit/hit1.png" id="2_f0jc1"]
+[ext_resource type="Texture2D" uid="uid://b6svedfrrx5a5" path="res://icons/graphics/hit/hit2.png" id="3_su6q8"]
+[ext_resource type="Texture2D" uid="uid://bnrs4t86xew4a" path="res://icons/graphics/hit/hit3.png" id="4_kqnci"]
+[ext_resource type="Texture2D" uid="uid://doj6nrcblyqfx" path="res://icons/graphics/hit/hit4.png" id="5_1uxpm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3mr50"]
 animations = [{
