@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://dt6xydr5qfiwa"]
 
-[ext_resource type="Texture2D" uid="uid://df2n40pc2qn5k" path="res://icons/graphics/hawk 1.png" id="1_2mw8g"]
+[ext_resource type="Texture2D" uid="uid://df2n40pc2qn5k" path="res://icons/graphics/hawk/hawk 1.png" id="1_2mw8g"]
 [ext_resource type="Script" path="res://Scripts/Hawk.cs" id="1_aph8s"]
-[ext_resource type="Texture2D" uid="uid://4uqdm3chuf3b" path="res://icons/graphics/hawk 2.png" id="2_x3sch"]
-[ext_resource type="Texture2D" uid="uid://cal44epgljnsg" path="res://icons/graphics/hawk 3.png" id="3_7yimi"]
+[ext_resource type="Texture2D" uid="uid://4uqdm3chuf3b" path="res://icons/graphics/hawk/hawk 2.png" id="2_x3sch"]
+[ext_resource type="Texture2D" uid="uid://cal44epgljnsg" path="res://icons/graphics/hawk/hawk 3.png" id="3_7yimi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cp8g0"]
 animations = [{

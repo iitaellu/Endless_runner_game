@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvjm5plf66fvj"]
 
 [ext_resource type="Script" path="res://Scripts/Bush.cs" id="1_fuk2j"]
-[ext_resource type="Texture2D" uid="uid://cmx4j0b03eqnk" path="res://icons/graphics/bush.png" id="2_qb8ue"]
+[ext_resource type="Texture2D" uid="uid://cmx4j0b03eqnk" path="res://icons/graphics/bush/bush.png" id="2_qb8ue"]
 [ext_resource type="Shape2D" uid="uid://54nuddxra5t0" path="res://collisionShapes/obstacles/bushCollisionShape.tres" id="3_wxlen"]
 
 [node name="bush" type="StaticBody2D"]

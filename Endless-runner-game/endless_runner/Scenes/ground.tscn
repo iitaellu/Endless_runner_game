@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ywjo3daf80uc"]
 
 [ext_resource type="Script" path="res://Scripts/Ground.cs" id="1_b43gd"]
-[ext_resource type="Texture2D" uid="uid://d0jrem5wapo6t" path="res://icons/graphics/ground.png" id="2_2805f"]
+[ext_resource type="Texture2D" uid="uid://d0jrem5wapo6t" path="res://icons/graphics/environment/ground.png" id="2_2805f"]
 [ext_resource type="Shape2D" uid="uid://5g8chqprsx33" path="res://collisionShapes/new_rectangle_shape_2d.tres" id="3_8mapu"]
 [ext_resource type="Script" path="res://Scripts/ObstacleSpawner.cs" id="4_ngcxf"]
 

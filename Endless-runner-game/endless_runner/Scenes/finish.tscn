@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3kt8cabbdiyx"]
+[gd_scene load_steps=4 format=3 uid="uid://d3kt8cabbdiyx"]
 
-[ext_resource type="Texture2D" uid="uid://bmpxcyf54kl2m" path="res://icons/graphics/exit 300x150px.png" id="1_as0ts"]
 [ext_resource type="Script" path="res://Scripts/Finish.cs" id="1_wb5sj"]
+[ext_resource type="Texture2D" uid="uid://c2viuhpgrfbjp" path="res://icons/graphics/buttons/Exitbutton.png" id="2_56hc7"]
+[ext_resource type="Texture2D" uid="uid://cq07mqv0timih" path="res://icons/graphics/buttons/startbutton.png" id="3_qp6u3"]
 
 [node name="Finish" type="CanvasLayer"]
 script = ExtResource("1_wb5sj")
@@ -15,32 +16,48 @@ offset_bottom = 190.0
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.689282, 0.710688, 0.694489, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 66
+text = "Finish! 
+"
+horizontal_alignment = 1
+
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.689282, 0.710688, 0.694489, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 33
-text = "Finish! 
-You got Home"
+theme_override_font_sizes/font_size = 40
+text = "You got Home"
 horizontal_alignment = 1
 
 [node name="Finish" type="TextureButton" parent="."]
 unique_name_in_owner = true
-offset_left = 417.0
-offset_top = 415.0
-offset_right = 717.0
-offset_bottom = 565.0
+offset_left = 311.0
+offset_top = 444.0
+offset_right = 466.0
+offset_bottom = 523.0
 size_flags_horizontal = 4
-size_flags_vertical = 8
-texture_normal = ExtResource("1_as0ts")
+size_flags_vertical = 4
+texture_normal = ExtResource("2_56hc7")
+
+[node name="StartNext" type="TextureButton" parent="."]
+unique_name_in_owner = true
+offset_left = 641.0
+offset_top = 441.0
+offset_right = 796.0
+offset_bottom = 520.0
+texture_normal = ExtResource("3_qp6u3")
 
 [node name="ScoreBoard" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 301.0
-offset_top = 195.0
-offset_right = 837.0
-offset_bottom = 376.0
+offset_left = 300.0
+offset_top = 244.0
+offset_right = 836.0
+offset_bottom = 425.0
 
 [node name="Panel" type="Panel" parent="ScoreBoard"]
 layout_mode = 1
