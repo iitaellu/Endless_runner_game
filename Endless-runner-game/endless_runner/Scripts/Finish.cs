@@ -12,6 +12,8 @@ public partial class Finish : CanvasLayer
 
 	private TextureButton _finishButton;
 	private TextureButton _startAgainButton;
+
+	private AudioStreamPlayer2D _soundEffect;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
     {
@@ -20,6 +22,8 @@ public partial class Finish : CanvasLayer
 		_first = GetNode<Label>("%1place");
         _second = GetNode<Label>("%2place");
 		_third = GetNode<Label>("%3place");
+
+		_soundEffect = GetNode<AudioStreamPlayer2D>("%ButtonEffects");
 
 		_globalScore = GetNode<GlobalScore>("/root/GlobalScore");
 
@@ -32,12 +36,25 @@ public partial class Finish : CanvasLayer
         _second.Text = $"2nd place: {scores[1]}";
         _third.Text = $"3rd place: {scores[2]}";
 
-		_finishButton.Pressed += () => GetTree().ChangeSceneToFile("res://Scenes/Menu.tscn");
-		_startAgainButton.Pressed += () => GetTree().ChangeSceneToFile("res://Scenes/main.tscn");
+		_finishButton.Pressed += OnStartPressed;
+		_startAgainButton.Pressed += OnExitPressed;
     }
+
+	private async void OnStartPressed()
+	{
+		_soundEffect.Play();
+		await ToSignal(GetTree().CreateTimer(0.1f), "timeout");
+		GetTree().ChangeSceneToFile("res://Scenes/Menu.tscn");
+	}
+	private async void OnExitPressed()
+	{
+		_soundEffect.Play();
+		await ToSignal(GetTree().CreateTimer(0.1f), "timeout");
+		GetTree().ChangeSceneToFile("res://Scenes/main.tscn");
+	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
-    {
-    }
+	{
+	}
 }

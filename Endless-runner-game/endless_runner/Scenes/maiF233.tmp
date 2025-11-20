@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://di2wh8xq04wr1"]
+
+[ext_resource type="Script" path="res://Scripts/Main.cs" id="1_g3gia"]
+[ext_resource type="PackedScene" uid="uid://ywjo3daf80uc" path="res://Scenes/ground.tscn" id="2_i8k23"]
+[ext_resource type="PackedScene" uid="uid://dwt4ct23gp5b2" path="res://Scenes/levels.tscn" id="2_xfpdm"]
+[ext_resource type="PackedScene" uid="uid://k773mu6xye66" path="res://Scenes/player.tscn" id="3_0r3lq"]
+[ext_resource type="PackedScene" uid="uid://btl3c84344xkd" path="res://Scenes/ui.tscn" id="4_35l5v"]
+[ext_resource type="AudioStream" uid="uid://neb4olusl6ep" path="res://Music/Run-Amok(chosic.com).mp3" id="6_nsjlc"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_g3gia")
+
+[node name="Levels" parent="." instance=ExtResource("2_xfpdm")]
+
+[node name="Ground" parent="." instance=ExtResource("2_i8k23")]
+position = Vector2(0, 609)
+
+[node name="Player" parent="." instance=ExtResource("3_0r3lq")]
+position = Vector2(68, 528)
+collision_layer = 1
+collision_mask = 6
+
+[node name="UI" parent="." instance=ExtResource("4_35l5v")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_nsjlc")
+autoplay = true

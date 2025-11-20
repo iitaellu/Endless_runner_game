@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnbyy36446vjh"]
+[gd_scene load_steps=7 format=3 uid="uid://bnbyy36446vjh"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.cs" id="1_ctmm0"]
 [ext_resource type="Texture2D" uid="uid://cd4s0wdcnwlbt" path="res://icons/graphics/buttons/Endbutton.png" id="2_u7hoa"]
 [ext_resource type="Texture2D" uid="uid://cq07mqv0timih" path="res://icons/graphics/buttons/startbutton.png" id="3_kgdy0"]
 [ext_resource type="Texture2D" uid="uid://c5agxfj7782bj" path="res://icons/graphics/buttons/Creditsbutton.png" id="4_s2214"]
+[ext_resource type="AudioStream" uid="uid://chbctt0csoduh" path="res://Music/music/Spiring-Stay-Calm-chosic.com_.mp3" id="5_cd0w8"]
+[ext_resource type="AudioStream" uid="uid://dbt24n5426xeb" path="res://Music/sounds/analog-appliance-button-15-186961.mp3" id="6_v4m16"]
 
 [node name="Menu" type="Node"]
 script = ExtResource("1_ctmm0")
@@ -59,3 +61,11 @@ offset_bottom = 451.0
 unique_name_in_owner = true
 layout_mode = 2
 texture_normal = ExtResource("4_s2214")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_cd0w8")
+autoplay = true
+
+[node name="Effect" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_v4m16")

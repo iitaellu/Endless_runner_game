@@ -126,8 +126,11 @@ script = ExtResource("1_3s5ls")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3, -12)
 sprite_frames = SubResource("SpriteFrames_lu4th")
-animation = &"jump_still"
+animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, -12.5)
+visible = false
+position = Vector2(-1, -12.5)
 shape = ExtResource("16_rg8cp")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

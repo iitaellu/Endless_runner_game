@@ -11,7 +11,8 @@ public partial class Hawk : StaticBody2D
 	private AnimatedSprite2D _animatedSprite2D;
 
 	private VisibleOnScreenNotifier2D _visibleOnScreenNotifier2D;
-
+	private AudioStreamPlayer2D _soundEffect;
+	private AudioStream _hitStream;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -19,7 +20,7 @@ public partial class Hawk : StaticBody2D
 		AddToGroup("obstacles");
 		_animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		_visibleOnScreenNotifier2D = GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
-
+		_soundEffect = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
 		_visibleOnScreenNotifier2D.ScreenExited += OnScreenExcited;
 	}
 
@@ -29,9 +30,12 @@ public partial class Hawk : StaticBody2D
 		Position += new Vector2(-_speed * (float)delta, 0);
 	}*/
 
-	public void stop() {
+	public void stop()
+	{
 		_speed = 0;
 		_animatedSprite2D.Stop();
+		_soundEffect.Play();
+
 	}
 
 	private void OnScreenExcited() => QueueFree();

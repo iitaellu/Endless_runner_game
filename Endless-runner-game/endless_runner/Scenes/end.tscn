@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://e4xhavvbk6fr"]
+[gd_scene load_steps=4 format=3 uid="uid://dongr3ra3oggv"]
 
 [ext_resource type="Script" path="res://Scripts/End.cs" id="1_5nyrc"]
 [ext_resource type="Texture2D" uid="uid://bjfjtyy3o5yk8" path="res://icons/graphics/goal/goal.png" id="2_c0fs7"]
@@ -15,5 +15,6 @@ position = Vector2(-4, -20)
 texture = ExtResource("2_c0fs7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(12, -279)
 shape = SubResource("RectangleShape2D_sgn3c")
