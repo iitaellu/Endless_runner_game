@@ -1,5 +1,7 @@
-TextureButton
+AudioStreamPlayer2D
 Panel
+ScrollContainer
+TextureButton
 Label
 RichTextLabel
 VBoxContainer
@@ -10,5 +12,3 @@ VisibleOnScreenNotifier2D
 Sprite2D
 HBoxContainer
 CollisionShape2D
-StaticBody2D
-CanvasLayer

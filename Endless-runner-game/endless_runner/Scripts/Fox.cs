@@ -17,6 +17,8 @@ public partial class Fox : StaticBody2D
 
 	private bool _isDefeated = false;
 
+	private AudioStreamPlayer2D _soundEffect;
+
 	public bool IsDefeated => _isDefeated;
 
 	public override void _Ready()
@@ -27,6 +29,7 @@ public partial class Fox : StaticBody2D
 		_animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		_visibleOnScreenNotifier2D = GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
 		_collisionShape2D = GetNode<CollisionShape2D>("CollisionShape2D");
+		_soundEffect = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
 		_visibleOnScreenNotifier2D.ScreenExited += OnScreenExcited;
 
 		
@@ -42,6 +45,7 @@ public partial class Fox : StaticBody2D
 	{
 		_speed = 0;
 		_animatedSprite2D.Stop();
+		_soundEffect.Play();
 	}
 
 	/*public void DisableCollision()

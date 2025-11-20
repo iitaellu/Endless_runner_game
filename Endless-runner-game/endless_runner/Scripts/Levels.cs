@@ -7,6 +7,8 @@ public partial class Levels : Node2D
 
 	[Signal] public delegate void LevelInfoFinishedEventHandler();
 
+	private AudioStreamPlayer2D _soundEffect;
+
 	private static Dictionary<string, string[]> _LEVEL_INFOS
 	= new Dictionary<string, string[]>() {
 		{"level1", new string[] {
@@ -44,6 +46,8 @@ public partial class Levels : Node2D
 		_levelContainer = GetNode<MarginContainer>("%LevelContainer");
 		_infoContainer = GetNode<MarginContainer>("%InfoContainer");
 
+		_soundEffect = GetNode<AudioStreamPlayer2D>("InfoContainer/AudioStreamPlayer2D");
+
 		_levelnumber++;
 		_infoID = "level" + _levelnumber.ToString();
 
@@ -74,8 +78,10 @@ public partial class Levels : Node2D
 		getDialogy(); //getDialogy("level" + _levelnumber.ToString()); }
 	}
 
-	public void getDialogy()
+	public async void getDialogy()
 	{
+		_soundEffect.Play();
+		await ToSignal(GetTree().CreateTimer(0.1f), "timeout");
 		string[] sentences = _LEVEL_INFOS[_infoID];
 
 		if (_infoSentenceIDx < sentences.Length)
@@ -91,25 +97,25 @@ public partial class Levels : Node2D
 			if (_infoID == "level1")
 				EmitSignal(SignalName.LevelInfoFinished);
 			else
-                _onFinishedCallback?.Invoke();
+				_onFinishedCallback?.Invoke();
 
 		}
 	}
 
-		public void ShowNextLevelInfo(Action onFinished)
+	public void ShowNextLevelInfo(Action onFinished)
 	{
 		_levelnumber++;
-			if (_levelnumber == 4)
-        {
+		if (_levelnumber == 4)
+		{
 			GD.Print("Game finished! Returning to Menu.");
 			//GetTree().ChangeSceneToFile("res://Scenes/Menu.tscn");
 			_onFinishedCallback?.Invoke();
-        }
+		}
 		else
 			ShowLevelInfo(onFinished);
-			//_levelLabel.Text = "Level: " + _levelnumber.ToString();
+		//_levelLabel.Text = "Level: " + _levelnumber.ToString();
 
-		}
+	}
 
 	/*public void ShowNextLevelInfo(Action onFinished)
 	{

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bv52nkeylb3e"]
+[gd_scene load_steps=9 format=3 uid="uid://bv52nkeylb3e"]
 
 [ext_resource type="Script" path="res://Scripts/Attack.cs" id="1_suoji"]
 [ext_resource type="Texture2D" uid="uid://cygqwqe51uyha" path="res://icons/graphics/hit/hit1.png" id="2_f0jc1"]
 [ext_resource type="Texture2D" uid="uid://b6svedfrrx5a5" path="res://icons/graphics/hit/hit2.png" id="3_su6q8"]
 [ext_resource type="Texture2D" uid="uid://bnrs4t86xew4a" path="res://icons/graphics/hit/hit3.png" id="4_kqnci"]
 [ext_resource type="Texture2D" uid="uid://doj6nrcblyqfx" path="res://icons/graphics/hit/hit4.png" id="5_1uxpm"]
+[ext_resource type="AudioStream" uid="uid://c6fx5vv7603sy" path="res://Music/sounds/whoosh-effect-382717.mp3" id="6_7utew"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3mr50"]
 animations = [{
@@ -47,5 +48,10 @@ sprite_frames = SubResource("SpriteFrames_3mr50")
 animation = &"hit"
 
 [node name="hitCollision" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(59, -18.5)
 shape = SubResource("RectangleShape2D_if24e")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_7utew")
+autoplay = true

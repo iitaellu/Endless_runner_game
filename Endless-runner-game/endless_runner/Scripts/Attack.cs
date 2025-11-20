@@ -8,12 +8,22 @@ public partial class Attack : Area2D
 	public delegate void AnimationFinishedEventHandler();
 	private AnimatedSprite2D _sprite;
 	private CollisionShape2D _collisionShape;
+
+	private AudioStreamPlayer2D _soundEffect;
+	private AudioStream _hitStream;
+	private AudioStream _attackStream;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		_sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		_collisionShape = GetNode<CollisionShape2D>("hitCollision");
 		_sprite.AnimationFinished += OnAnimationFinished;
+
+		_soundEffect = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
+
+		_hitStream = GD.Load<AudioStream>("res://Music/sounds/cinematic-whoosh-hit-impact-238932.mp3");
+		_attackStream = GD.Load<AudioStream>("res://Music/sounds/whoosh-effect-382717.mp3");
+
 		//BodyEntered += OnBodyEntered;
 		_collisionShape.Disabled = true;
 
@@ -39,6 +49,8 @@ public partial class Attack : Area2D
 	{
 		_collisionShape.Disabled = false;
 		_sprite.Play("default");
+		_soundEffect.Stream = _attackStream;
+		_soundEffect.Play();
 	}
 
 	private void OnAnimationFinished()
@@ -46,39 +58,6 @@ public partial class Attack : Area2D
 		_collisionShape.SetDeferred("disabled", true);
 		EmitSignal(SignalName.AnimationFinished);
 	}
-
-	/*private void OnBodyEntered(Node body)
-	{
-
-		if (body is Fox fox)
-		{
-		
-			GD.Print("Hit Fox!");
-			_sprite.Play("hit");
-			// Stop fox and play its hit animation if it has one
-			fox.OnHit();
-			fox.stop();
-
-
-			_collisionShape.SetDeferred("disabled", true);
-			}*/
-
-			// Optional: if your fox has an AnimatedSprite2D with "hit" animation
-			/*
-			var foxSprite = fox.GetNodeOrNull<AnimatedSprite2D>("AnimatedSprite2D");
-            if (foxSprite != null)
-            {
-				_sprite.Play("hit");
-		
-            }if (foxSprite != null)
-				{
-					foxSprite.Modulate = new Color(1, 0.5f, 0.5f); // light red flash
-				}
-
-			// Disable the attack to prevent multiple hits
-
-		
-	}*/
 	
 	private async void HandleFoxHit(Fox fox)
     {
@@ -88,6 +67,8 @@ public partial class Attack : Area2D
 
         GD.Print("Hit Fox!");
 		_sprite.Play("hit");
+		_soundEffect.Stream = _hitStream;
+		_soundEffect.Play();
         
         // Stop and disable the fox
         fox.OnHit();
