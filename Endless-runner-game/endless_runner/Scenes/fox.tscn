@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ct6d6hittfski"]
+[gd_scene load_steps=9 format=3 uid="uid://ct6d6hittfski"]
 
 [ext_resource type="Script" path="res://Scripts/Fox.cs" id="1_na6hq"]
 [ext_resource type="Texture2D" uid="uid://cu247ughxeopc" path="res://icons/graphics/fox/fox run 1 pig.png" id="2_3itje"]
 [ext_resource type="Texture2D" uid="uid://dic0ooqthwtw7" path="res://icons/graphics/fox/fox run 2 pig.png" id="3_mk38p"]
 [ext_resource type="Texture2D" uid="uid://duvaoasw5nee5" path="res://icons/graphics/fox/fox run 3 pig.png" id="4_6i0ng"]
 [ext_resource type="Texture2D" uid="uid://csiv16wc7anf7" path="res://icons/graphics/fox/fox run 4 pig.png" id="5_g06am"]
+[ext_resource type="AudioStream" uid="uid://dalcg3yenx7h" path="res://Music/sounds/single-bark-of-a-dog-38780.mp3" id="6_dkf5d"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b65qb"]
 animations = [{
@@ -40,7 +41,11 @@ autoplay = "default"
 frame_progress = 0.621065
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(9, 6)
 shape = SubResource("RectangleShape2D_gxfkd")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_dkf5d")

@@ -21,6 +21,8 @@ public partial class Player : CharacterBody2D
 	private RectangleShape2D _runShape = GD.Load<RectangleShape2D>("res://collisionShapes/player/player_run.tres");
 	private RectangleShape2D _crouchShape = GD.Load<RectangleShape2D>("res://collisionShapes/player/player_crouching.tres");
 
+	private AudioStreamPlayer2D _audio;
+
 	private AnimatedSprite2D _animatedSprite;
 	private CollisionShape2D _collisionShape2D;
 
@@ -30,19 +32,32 @@ public partial class Player : CharacterBody2D
 	private Attack _activeAttack;
 
     private float _yOffsetCrouch = 30.0f;
-    private float _collisionShapeStartYPosition;
+	private float _collisionShapeStartYPosition;
 
+	private AudioStreamPlayer2D _soundEffect;
+	private AudioStream _deathStream;
+	private AudioStream _winningStream;
+	private AudioStream _jumpStream;
 
-    public override void _Ready()
+	private AudioStream _crawlingStream;
+
+	public override void _Ready()
 	{
 		GetNode<GlobalScore>("/root/GlobalScore").ResetScore();
 		_animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		_collisionShape2D = GetNode<CollisionShape2D>("CollisionShape2D");
 		_attackScene = GD.Load<PackedScene>("res://Scenes/attack.tscn");
 		_endScene = GD.Load<PackedScene>("res://Scenes/end.tscn");
-        _collisionShape2D.Shape = _runShape;
-        _collisionShapeStartYPosition = _collisionShape2D.Position.Y;
-    }
+		_collisionShape2D.Shape = _runShape;
+		_collisionShapeStartYPosition = _collisionShape2D.Position.Y;
+
+		_soundEffect = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
+
+		_deathStream = GD.Load<AudioStream>("res://Music/sounds/game-over-401236.mp3");
+		_winningStream = GD.Load<AudioStream>("res://Music/sounds/level-passed-143039.mp3");
+		_jumpStream = GD.Load<AudioStream>("res://Music/sounds/thud-362392.mp3");
+		_crawlingStream = GD.Load<AudioStream>("res://Music/sounds/walking-on-grass-381887.mp3");
+	}
 
     public override void _Process(double delta)
 	{
@@ -58,7 +73,12 @@ public partial class Player : CharacterBody2D
                     _collisionShape2D.Position = new Vector2(_collisionShape2D.Position.X, _collisionShapeStartYPosition);
                     _animatedSprite.Offset = new Vector2(0, 0);
                 }
-                _animatedSprite.Play("crouch");
+				_animatedSprite.Play("crouch");
+				if (!_soundEffect.Playing || _soundEffect.Stream != _crawlingStream)
+            {
+                _soundEffect.Stream = _crawlingStream;
+                _soundEffect.Play();
+            }
             } else {
 				if (_collisionShape2D.Shape != _runShape){
 					_collisionShape2D.Shape = _runShape;
@@ -66,6 +86,10 @@ public partial class Player : CharacterBody2D
 					_animatedSprite.Offset = new Vector2(0,0);
 				}
 				_animatedSprite.Play("run");
+				if (_soundEffect.Stream == _crawlingStream && _soundEffect.Playing)
+            {
+                _soundEffect.Stop();
+            }
 			}
 		}
 	}
@@ -90,6 +114,8 @@ public partial class Player : CharacterBody2D
 		}
 		if (Input.IsActionJustPressed("jump") && IsOnFloor())
 		{
+			_soundEffect.Stream = _jumpStream;
+			_soundEffect.Play();
 			velocity.Y = _jumpVelocity;
 			_animatedSprite.Play("jump");
 		}
@@ -112,7 +138,10 @@ public partial class Player : CharacterBody2D
 		//Game finished
 		if (moveCollider is End)
 		{
+			_soundEffect.Stream = _winningStream;
+			_soundEffect.Play();
 			GD.Print("Player got to home!");
+			GetNode<Main>("/root/Main").StopMusic();
 			GetNode<GlobalScore>("/root/GlobalScore").SaveScore();
 			//await ToSignal(GetTree().CreateTimer(0.3), "timeout");
 			GetTree().ChangeSceneToFile("res://Scenes/finish.tscn");
@@ -129,6 +158,9 @@ public partial class Player : CharacterBody2D
 		// Game Over
 		if ((moveCollider is Hawk) || (moveCollider is Fox) || (moveCollider is Bush))
 		{
+			GetNode<Main>("/root/Main").StopMusic();
+			_soundEffect.Stream = _deathStream;
+			_soundEffect.Play();
 			// Only die if the fox is NOT defeated
 			if (moveCollider is Fox fox && fox.IsDefeated)
 				return;
@@ -138,6 +170,10 @@ public partial class Player : CharacterBody2D
 			_animatedSprite.Play("die");
 			EmitSignal(SignalName.ObstacleHit);
 
+			if (moveCollider is Bush)
+			{
+				(moveCollider as Bush).SoundEffect();
+			}
 			if (moveCollider is Hawk)
 			{
 				(moveCollider as Hawk).stop();

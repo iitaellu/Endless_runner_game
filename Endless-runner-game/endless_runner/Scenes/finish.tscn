@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3kt8cabbdiyx"]
+[gd_scene load_steps=6 format=3 uid="uid://d3kt8cabbdiyx"]
 
 [ext_resource type="Script" path="res://Scripts/Finish.cs" id="1_wb5sj"]
 [ext_resource type="Texture2D" uid="uid://c2viuhpgrfbjp" path="res://icons/graphics/buttons/Exitbutton.png" id="2_56hc7"]
 [ext_resource type="Texture2D" uid="uid://cq07mqv0timih" path="res://icons/graphics/buttons/startbutton.png" id="3_qp6u3"]
+[ext_resource type="AudioStream" uid="uid://bdptl7prahe5r" path="res://Music/music/ForestWalk-320bit(chosic.com).mp3" id="4_ne770"]
+[ext_resource type="AudioStream" uid="uid://dbt24n5426xeb" path="res://Music/sounds/analog-appliance-button-15-186961.mp3" id="5_gvb3b"]
 
 [node name="Finish" type="CanvasLayer"]
 script = ExtResource("1_wb5sj")
@@ -81,7 +83,7 @@ grow_horizontal = 2
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "1st palce data"
+text = "1st place data"
 
 [node name="2place" type="Label" parent="ScoreBoard/VBoxContainer"]
 unique_name_in_owner = true
@@ -117,3 +119,11 @@ theme_override_font_sizes/font_size = 25
 text = "Top 3 scores"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ne770")
+autoplay = true
+
+[node name="ButtonEffects" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_gvb3b")
