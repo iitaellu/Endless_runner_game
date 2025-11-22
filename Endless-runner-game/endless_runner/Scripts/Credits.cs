@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Credits : Node
+public partial class Credits : Node2D
 {
 
 	[Export]
@@ -23,7 +23,7 @@ public partial class Credits : Node
     {
 		_soundEffect.Play();
 		await ToSignal(GetTree().CreateTimer(0.1f), "timeout");
-        GetTree().ChangeSceneToFile("res://Scenes/Menu.tscn");
+        this.Visible = false;
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
