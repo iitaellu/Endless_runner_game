@@ -11,6 +11,9 @@ public partial class Menu : Node
 	private TextureButton _creditsButton;
 
 	private AudioStreamPlayer2D _soundEffect;
+
+	private Credits _credits;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -19,6 +22,7 @@ public partial class Menu : Node
 		_creditsButton = GetNode<TextureButton>("%Credits");
 		_soundEffect = GetNode<AudioStreamPlayer2D>("%Effect");
 
+		_credits = GetNode<Credits>("Credits");
 
 		_startButton.Pressed += OnStartPressed;
 		_exitButton.Pressed += OnExitPressed;
@@ -44,7 +48,8 @@ public partial class Menu : Node
     {
 		_soundEffect.Play();
 		await ToSignal(GetTree().CreateTimer(0.1f), "timeout");
-        GetTree().ChangeSceneToFile("res://Scenes/credits.tscn");
+		_credits.Visible = true;
+        
     }
 
 
