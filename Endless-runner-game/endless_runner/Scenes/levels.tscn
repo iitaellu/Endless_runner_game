@@ -7,14 +7,27 @@
 [node name="Levels" type="Node2D"]
 script = ExtResource("1_tlwi5")
 
+[node name="Panel" type="Panel" parent="."]
+offset_left = 86.0
+offset_top = 129.0
+offset_right = 1079.0
+offset_bottom = 361.0
+
 [node name="LevelContainer" type="MarginContainer" parent="."]
 unique_name_in_owner = true
-offset_right = 1151.0
-offset_bottom = 40.0
+offset_left = 93.0
+offset_right = 1075.0
+offset_bottom = 146.0
+
+[node name="Panel" type="Panel" parent="LevelContainer"]
+visible = false
+layout_mode = 2
 
 [node name="Level" type="Label" parent="LevelContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(0.729412, 0.729412, 0.729412, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 106
 text = "Level X"
 horizontal_alignment = 1
@@ -26,12 +39,13 @@ offset_left = 97.0
 offset_top = 137.0
 offset_right = 1078.0
 offset_bottom = 361.0
+theme_override_constants/margin_left = 0
 
 [node name="Info" type="Label" parent="InfoContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 51
+theme_override_font_sizes/font_size = 50
 text = "This is example texs klkvjnfdjvhdfbdfbf vffbf"
 autowrap_mode = 3
 clip_text = true
@@ -44,4 +58,6 @@ size_flags_vertical = 8
 texture_normal = ExtResource("2_jr28e")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="InfoContainer"]
+visible = false
+position = Vector2(-76, -119)
 stream = ExtResource("3_w33lc")

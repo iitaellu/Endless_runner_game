@@ -1,3 +1,5 @@
+res://Scenes/ui.tscn
+res://Scenes/levels.tscn
 res://Scenes/main.tscn
 res://Scenes/attack.tscn
 res://Scenes/end.tscn
@@ -5,9 +7,7 @@ res://Scenes/collectable.tscn
 res://Scenes/ground.tscn
 res://Scenes/fox.tscn
 res://Scenes/Menu.tscn
-res://Scenes/levels.tscn
 res://Scenes/credits.tscn
-res://Scenes/ui.tscn
 res://Scenes/finish.tscn
 res://Scenes/hawk.tscn
 res://Scenes/player.tscn
