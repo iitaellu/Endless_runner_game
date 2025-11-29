@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck5kwpy5d1u2b"
-path="res://.godot/imported/star8.png-80392b18a05032cfad2df7f45ce1dbe3.ctex"
+uid="uid://boy3y8db04q6o"
+path="res://.godot/imported/Finish picture for game.png-e4fd764842201dd9df3fb52ae420e142.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://star/star8.png"
-dest_files=["res://.godot/imported/star8.png-80392b18a05032cfad2df7f45ce1dbe3.ctex"]
+source_file="res://icons/graphics/backgrounds/Finish picture for game.png"
+dest_files=["res://.godot/imported/Finish picture for game.png-e4fd764842201dd9df3fb52ae420e142.ctex"]
 
 [params]
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3kt8cabbdiyx"]
+[gd_scene load_steps=7 format=3 uid="uid://d3kt8cabbdiyx"]
 
 [ext_resource type="Script" path="res://Scripts/Finish.cs" id="1_wb5sj"]
+[ext_resource type="Texture2D" uid="uid://boy3y8db04q6o" path="res://icons/graphics/backgrounds/Finish picture for game.png" id="2_6t7he"]
 [ext_resource type="Texture2D" uid="uid://c2viuhpgrfbjp" path="res://icons/graphics/buttons/Exitbutton.png" id="2_56hc7"]
 [ext_resource type="Texture2D" uid="uid://cq07mqv0timih" path="res://icons/graphics/buttons/startbutton.png" id="3_qp6u3"]
 [ext_resource type="AudioStream" uid="uid://bdptl7prahe5r" path="res://Music/music/ForestWalk-320bit(chosic.com).mp3" id="4_ne770"]
@@ -8,6 +9,17 @@
 
 [node name="Finish" type="CanvasLayer"]
 script = ExtResource("1_wb5sj")
+
+[node name="FinishPictureForGame" type="Sprite2D" parent="."]
+position = Vector2(576, 325)
+scale = Vector2(0.328962, 0.262097)
+texture = ExtResource("2_6t7he")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 383.0
+offset_top = 81.0
+offset_right = 754.0
+offset_bottom = 533.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_left = 403.0
@@ -20,7 +32,7 @@ layout_mode = 2
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.689282, 0.710688, 0.694489, 1)
+theme_override_colors/font_color = Color(0.729412, 0.729412, 0.729412, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "Finish! 
@@ -29,7 +41,7 @@ horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.689282, 0.710688, 0.694489, 1)
+theme_override_colors/font_color = Color(0.729412, 0.729412, 0.729412, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "You got Home"
@@ -37,28 +49,28 @@ horizontal_alignment = 1
 
 [node name="Finish" type="TextureButton" parent="."]
 unique_name_in_owner = true
-offset_left = 311.0
-offset_top = 444.0
-offset_right = 466.0
-offset_bottom = 523.0
+offset_left = 411.0
+offset_top = 439.0
+offset_right = 566.0
+offset_bottom = 518.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("2_56hc7")
 
 [node name="StartNext" type="TextureButton" parent="."]
 unique_name_in_owner = true
-offset_left = 641.0
-offset_top = 441.0
-offset_right = 796.0
-offset_bottom = 520.0
+offset_left = 577.0
+offset_top = 439.0
+offset_right = 732.0
+offset_bottom = 518.0
 texture_normal = ExtResource("3_qp6u3")
 
 [node name="ScoreBoard" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 300.0
+offset_left = 423.0
 offset_top = 244.0
-offset_right = 836.0
+offset_right = 700.0
 offset_bottom = 425.0
 
 [node name="Panel" type="Panel" parent="ScoreBoard"]
@@ -113,6 +125,7 @@ text = "Top 3 Scores"
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_left = -4.0
 offset_bottom = 38.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 25

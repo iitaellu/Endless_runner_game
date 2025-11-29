@@ -1,6 +1,10 @@
+Panel
+SubViewportContainer
+TabContainer
+Container
+MarginContainer
 Node2D
 AudioStreamPlayer2D
-Panel
 ScrollContainer
 TextureButton
 Label
@@ -8,8 +12,3 @@ RichTextLabel
 VBoxContainer
 Control
 Area2D
-AnimatedSprite2D
-VisibleOnScreenNotifier2D
-Sprite2D
-HBoxContainer
-CollisionShape2D

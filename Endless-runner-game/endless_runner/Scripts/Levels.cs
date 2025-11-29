@@ -12,20 +12,24 @@ public partial class Levels : Node2D
 	private static Dictionary<string, string[]> _LEVEL_INFOS
 	= new Dictionary<string, string[]>() {
 		{"level1", new string[] {
-		"Hello! You are cat who has freedom to go outside",
-		"You have traveled a far from your home and it is time to go back",
-		"However, the forest is full of danger!",
-		"For now, ahead there is just pointy bushes where you can get stuck and die",
-		"Avoid bushes jumping over them pressing 'W' from your keyboard"
+		"I am a cat who has freedom to go outside. I love to case butterflies!",
+		"I never go far from garden, but this time I think I went bit too far from home.",
+		"It is getting dark, and in the forest there is many things what can end my life.",
+		"I must hurry back home...",
+		"For now, ahead there is just pointy bushes where I can get stuck and die",
+		"I have to avoid these bushes jumping over them (pressing 'W' from keyboard)",
+		"Let's go home! (HINT! Collect stars to get points!)"
 		 }
 		 },{ "level2", new string[] {
 		"It is getting late, and the home is still far away.",
-		"Hawks have notised you and rised on the sky trying chatch you",
-		"Dodge hawks by chrunching, pressing 'S' from your keyboard"
+		"I see that hawks have risen to the sky. I wish they do not notice me!",
+		"(Dodge hawks by crawling, pressing 'S' from keyboard)"
 		}
 		},{ "level3", new string[] {
-			"Home is close, but now also foxes are after you",
-			"You can jump over them pressing 'W' but you can also hit them pressing 'space' button"
+			"Home is close!",
+			"Oh... Wait. There is foxes ahead! I have two options to survive from them.",
+			"I need to either protect my self (pressing ´space´), or jump over them (pressing 'w')",
+			"I wish I can make it back home. (HINT!: Hittig foxes give you extra points!)"
 		}
 	}
 };
@@ -38,6 +42,8 @@ public partial class Levels : Node2D
 	private int _levelnumber = 0;
 	private string _infoID;
 
+	private Panel _panel;
+
 	private Action _onFinishedCallback;
 
 	// Called when the node enters the scene tree for the first time.
@@ -45,6 +51,7 @@ public partial class Levels : Node2D
 	{
 		_levelContainer = GetNode<MarginContainer>("%LevelContainer");
 		_infoContainer = GetNode<MarginContainer>("%InfoContainer");
+		_panel = GetNode<Panel>("Panel");
 
 		_soundEffect = GetNode<AudioStreamPlayer2D>("InfoContainer/AudioStreamPlayer2D");
 
@@ -70,6 +77,7 @@ public partial class Levels : Node2D
 
 		_levelContainer.Visible = true;
 		_infoContainer.Visible = true;
+		_panel.Visible = true;
 
 		_infoSentenceIDx = 0;
 		_infoID = "level" + _levelnumber.ToString();
@@ -93,6 +101,7 @@ public partial class Levels : Node2D
 		{
 			_levelContainer.Visible = false;
 			_infoContainer.Visible = false;
+			_panel.Visible = false;
 
 			if (_infoID == "level1")
 				EmitSignal(SignalName.LevelInfoFinished);
