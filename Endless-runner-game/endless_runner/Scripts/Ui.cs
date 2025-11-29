@@ -33,10 +33,13 @@ public partial class Ui : CanvasLayer
 
 	private AudioStreamPlayer2D _soundEffect;
 
+	private Panel _panel;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		_gameOverContainer = GetNode<VBoxContainer>("%GameOverContainer");
+		_panel = GetNode<Panel>("Panel");
 		_restartButton = GetNode<TextureButton>("%Restart");
 		_menuButton = GetNode<TextureButton>("%Menu");
 		_player = GetNode<Player>("/root/Main/Player");
@@ -50,6 +53,7 @@ public partial class Ui : CanvasLayer
 		_player.ObstacleHit += () =>
 		{
 			_gameOverContainer.Visible = true;
+			_panel.Visible = true;
 			//_audio.Play();
 			SetProcess(false);
 		};
