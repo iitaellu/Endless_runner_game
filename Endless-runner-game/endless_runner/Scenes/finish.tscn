@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3kt8cabbdiyx"]
+[gd_scene load_steps=7 format=3 uid="uid://d3kt8cabbdiyx"]
 
 [ext_resource type="Script" path="res://Scripts/Finish.cs" id="1_wb5sj"]
+[ext_resource type="Texture2D" uid="uid://boy3y8db04q6o" path="res://icons/graphics/backgrounds/Finish picture for game.png" id="2_6t7he"]
 [ext_resource type="Texture2D" uid="uid://c2viuhpgrfbjp" path="res://icons/graphics/buttons/Exitbutton.png" id="2_56hc7"]
 [ext_resource type="Texture2D" uid="uid://cq07mqv0timih" path="res://icons/graphics/buttons/startbutton.png" id="3_qp6u3"]
 [ext_resource type="AudioStream" uid="uid://bdptl7prahe5r" path="res://Music/music/ForestWalk-320bit(chosic.com).mp3" id="4_ne770"]
@@ -8,6 +9,17 @@
 
 [node name="Finish" type="CanvasLayer"]
 script = ExtResource("1_wb5sj")
+
+[node name="FinishPictureForGame" type="Sprite2D" parent="."]
+position = Vector2(576, 325)
+scale = Vector2(0.328962, 0.262097)
+texture = ExtResource("2_6t7he")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 383.0
+offset_top = 81.0
+offset_right = 754.0
+offset_bottom = 533.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_left = 403.0

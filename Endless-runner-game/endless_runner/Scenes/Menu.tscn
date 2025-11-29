@@ -13,8 +13,8 @@
 script = ExtResource("1_ctmm0")
 
 [node name="Menu_" type="Sprite2D" parent="."]
-position = Vector2(577, 325.625)
-scale = Vector2(0.329533, 0.262399)
+position = Vector2(577, 325.5)
+scale = Vector2(0.329533, 0.2625)
 texture = ExtResource("2_5joli")
 
 [node name="Panel" type="Panel" parent="."]
