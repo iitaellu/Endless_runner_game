@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceoyhakf0rqp4"]
+
+[ext_resource type="Script" path="res://Scripts/Forest.cs" id="1_8r3y5"]
+[ext_resource type="Texture2D" uid="uid://d0q4le5o3qj34" path="res://icons/graphics/forest/forest1.png" id="1_ycfhg"]
+[ext_resource type="Texture2D" uid="uid://cn025oekocw3w" path="res://icons/graphics/forest/forest2.png" id="2_hqeec"]
+
+[node name="Forest" type="ParallaxBackground"]
+script = ExtResource("1_8r3y5")
+
+[node name="Forest4" type="ParallaxLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(1229, 248)
+motion_mirroring = Vector2(1347.67, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Forest4"]
+texture_repeat = 2
+position = Vector2(-1362, -6)
+texture = ExtResource("2_hqeec")
+centered = false
+
+[node name="Forest1" type="ParallaxLayer" parent="."]
+unique_name_in_owner = true
+texture_repeat = 2
+position = Vector2(-7, 259)
+motion_mirroring = Vector2(1373, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Forest1"]
+texture_repeat = 2
+texture = ExtResource("1_ycfhg")
+centered = false
+
+[node name="Forest2" type="ParallaxLayer" parent="."]
+unique_name_in_owner = true
+texture_repeat = 2
+position = Vector2(-140, 270)
+motion_mirroring = Vector2(1373, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Forest2"]
+texture_repeat = 2
+position = Vector2(0, -3)
+texture = ExtResource("2_hqeec")
+centered = false

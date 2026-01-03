@@ -9,7 +9,7 @@ public partial class Ui : CanvasLayer
 	public delegate void IncreseDifficultyEventHandler();
 
 	[Export]
-	private int _scoreToIncreaseDifficulty = 20;
+	private int _scoreToIncreaseDifficulty = 60;
 
 	[Export]
 	private float _pointupdateInterval = 0.3f;

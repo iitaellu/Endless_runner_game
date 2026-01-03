@@ -127,9 +127,10 @@ script = ExtResource("1_3s5ls")
 position = Vector2(-3, -12)
 sprite_frames = SubResource("SpriteFrames_lu4th")
 animation = &"run"
+frame = 3
+frame_progress = 0.386089
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-1, -12.5)
 shape = ExtResource("16_rg8cp")
 

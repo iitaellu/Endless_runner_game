@@ -14,6 +14,9 @@ public partial class Player : CharacterBody2D
 	[Export]
 	private float _gravityMultiplier = 3.0f;
 
+	[Signal]
+	public delegate void GoalReachedEventHandler();
+
 
 	//Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
@@ -41,6 +44,9 @@ public partial class Player : CharacterBody2D
 
 	private AudioStream _crawlingStream;
 
+	private bool _autoRunToFinish = false;
+	private float _autoRunSpeed = 400f;
+
 	public override void _Ready()
 	{
 		GetNode<GlobalScore>("/root/GlobalScore").ResetScore();
@@ -59,8 +65,23 @@ public partial class Player : CharacterBody2D
 		_crawlingStream = GD.Load<AudioStream>("res://Music/sounds/walking-on-grass-381887.mp3");
 	}
 
-    public override void _Process(double delta)
+    public override async void _Process(double delta)
 	{
+		if (_autoRunToFinish)
+    {
+        GlobalPosition += new Vector2(_autoRunSpeed * (float)delta, 0);
+        _animatedSprite.Play("run");
+
+        // Kun pelaaja on pois ruudulta → vaihda scene
+        if (GlobalPosition.X > GetViewportRect().Size.X + 100)
+        {
+            await ToSignal(GetTree().CreateTimer(0.3f), "timeout");
+            GetTree().ChangeSceneToFile("res://Scenes/finish.tscn");
+        }
+
+        return;
+    }
+
 		if (_animatedSprite.Animation == "attack" && _animatedSprite.IsPlaying()){
 			//_attack.Visible = true;
 			//_attack.StartAnimation();
@@ -143,8 +164,16 @@ public partial class Player : CharacterBody2D
 			GD.Print("Player got to home!");
 			GetNode<Main>("/root/Main").StopMusic();
 			GetNode<GlobalScore>("/root/GlobalScore").SaveScore();
+
+			//Stop user inputs and start auto run for character
+			SetPhysicsProcess(false);
+    		SetProcess(false);
+			_autoRunToFinish = true;
+    		SetProcess(true);
+			//Stop rest the world
+			EmitSignal(SignalName.GoalReached);
 			//await ToSignal(GetTree().CreateTimer(0.3), "timeout");
-			GetTree().ChangeSceneToFile("res://Scenes/finish.tscn");
+			//GetTree().ChangeSceneToFile("res://Scenes/finish.tscn");
 			return;
 		}
 			
