@@ -22,5 +22,7 @@ coming soon
 
 # Credits
 Created by iitaellu,
+
 Art: iitaellu with Krita
+
 Sounds: collected from Pixabay and Chosic. All listed in credits
