@@ -36,7 +36,7 @@ public partial class Menu : Node
 	{
 		_soundEffect.Play();
 		await ToSignal(GetTree().CreateTimer(0.1f), "timeout");
-		GetTree().ChangeSceneToFile("res://Scenes/main.tscn");
+		GetTree().ChangeSceneToFile("res://Scenes/intro.tscn");
 	}
 	private async void OnExitPressed()
 	{

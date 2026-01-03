@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Endless_runner"
-run/main_scene="res://Scenes/main.tscn"
+config/name="Outdoor Cat"
+run/main_scene="res://Scenes/Menu.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://icons/graphics/header.png"
 
 [autoload]
 
@@ -49,4 +49,4 @@ attack={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0, 0.294372, 0.580782, 1)
+environment/defaults/default_clear_color=Color(0, 0.137348, 0.295033, 1)

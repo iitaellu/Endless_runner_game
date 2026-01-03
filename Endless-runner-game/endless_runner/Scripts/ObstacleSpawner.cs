@@ -72,23 +72,14 @@ public partial class ObstacleSpawner : Node
 		Random random = new Random();
 		float randomValue = (float)random.NextDouble();
 
-		if (finale == true)
-        {
-			SpawnEnd();
-			_obstaclespawnTimer.Stop();
-			GD.Print("Finale!!!!");
-			return;
-        }
 
 		if (randomValue <= _changeToSpawnHawk && randomValue > _changeToSpawnFox)
 		{
-
 			SpawnHawk();
 
 		}
 		else if (randomValue <= _changeToSpawnFox)
 		{
-
 			SpawnFox();
 
 		}
@@ -143,6 +134,21 @@ public partial class ObstacleSpawner : Node
 		end.GlobalPosition = new Vector2(_spawnPoint.Position.X, parentGround.GlobalPosition.Y - 100);
     }
 
+	public void TriggerFinale()
+	{
+		if (finale) return;
+
+		GD.Print("Finale triggered!");
+		finale = true;
+
+		// Lopeta kaikki normaali spawnaus
+		_obstaclespawnTimer.Stop();
+		_collectableSpawnTimer.Stop();
+
+		// Spawn end heti
+		SpawnEnd();
+	}
+
 	public void IncreaseDifficulty()
 	{
 		ChangePossiblity();
@@ -174,8 +180,8 @@ public partial class ObstacleSpawner : Node
 				break;
 
 			case 3:
-				GD.Print("Finale (Goal appear)");
-				finale = true; // 20% foxes, 40% hawks, 40% bushes
+				GD.Print("Finale");
+    			TriggerFinale();
 				break;
 		}
 	}

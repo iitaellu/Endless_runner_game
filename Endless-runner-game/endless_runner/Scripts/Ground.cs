@@ -24,6 +24,8 @@ public partial class Ground : Node2D
 
 	private Ui _ui;
 
+	private Forest _forest;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -33,6 +35,7 @@ public partial class Ground : Node2D
 		_player = GetNode<Player>("../Player");
 		_staticBody2D = GetNode<StaticBody2D>("Ground_1");
 		_staticBody2D2 = GetNode<StaticBody2D>("Ground_2");
+		_forest = GetNode<Forest>("/root/Main/Forest");
 
 
 		//This part works, when picture is not scaled 
@@ -51,10 +54,8 @@ public partial class Ground : Node2D
 		//_staticBody2D.GlobalPosition = _staticBody2D.GlobalPosition + new Vector2(x: _staticBody2D.GlobalPosition.X + _texturewidth, y: _staticBody2D.GlobalPosition.Y);
 		_staticBody2D2.GlobalPosition = _staticBody2D2.GlobalPosition with { X = _staticBody2D.GlobalPosition.X + _texturewidth};
 
-		_player.ObstacleHit += () => {
-			_speed = 0;
-			_obstacleSpawner.QueueFree();
-		};
+		_player.ObstacleHit += OnPlayerDied;
+		_player.GoalReached += OnPlayerReachedGoal;
 
 		_ui.IncreseDifficulty += async () => {
 			GD.Print("UI requested difficulty increase and show next level info");
@@ -84,9 +85,28 @@ public partial class Ground : Node2D
 		};
 	}
 
+	private void OnPlayerDied()
+	{
+		_speed = 0;
+		_forest.SetScrollSpeed(0);
+		_obstacleSpawner.QueueFree();
+
+		// täällä game over UI
+	}
+
+	private void OnPlayerReachedGoal()
+	{
+		_speed = 0;
+		_forest.SetScrollSpeed(0);
+		_obstacleSpawner.QueueFree();
+
+		// EI game over UI:ta
+	}
+
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		_forest.SetScrollSpeed(_speed);
 		_staticBody2D.GlobalPosition += new Vector2(_speed * (float)delta, 0);
 		_staticBody2D2.GlobalPosition += new Vector2(_speed * (float)delta, 0);
 
