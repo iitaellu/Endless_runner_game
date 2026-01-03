@@ -3,8 +3,8 @@ using System;
 
 public partial class Bush : StaticBody2D
 {
-public Sprite2D Sprite2D;
-public CollisionShape2D CollisionShape2D;
+	public Sprite2D Sprite2D;
+	public CollisionShape2D CollisionShape2D;
 
 	private VisibleOnScreenNotifier2D _visibleOnScreenNotifier2D;
 

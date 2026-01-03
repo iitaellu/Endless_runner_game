@@ -1,9 +1,14 @@
-res://Scenes/finish.tscn
+res://Scenes/player.tscn
+res://Scenes/bush.tscn
+res://Scenes/ground.tscn
+res://Scenes/hawk.tscn
+res://Scenes/fox.tscn
 res://Scenes/main.tscn
 res://Scenes/Menu.tscn
 res://Scenes/levels.tscn
 res://Scenes/credits.tscn
 res://Scenes/ui.tscn
+res://Scenes/finish.tscn
 res://Scripts/Collectable.cs
 res://Scripts/Player.cs
 res://Scripts/Ground.cs
