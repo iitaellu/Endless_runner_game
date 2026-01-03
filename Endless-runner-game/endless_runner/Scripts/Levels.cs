@@ -12,24 +12,26 @@ public partial class Levels : Node2D
 	private static Dictionary<string, string[]> _LEVEL_INFOS
 	= new Dictionary<string, string[]>() {
 		{"level1", new string[] {
-		"I am a cat who has freedom to go outside. I love to case butterflies!",
-		"I never go far from garden, but this time I think I went bit too far from home.",
-		"It is getting dark, and in the forest there is many things what can end my life.",
-		"I must hurry back home...",
-		"For now, ahead there is just pointy bushes where I can get stuck and die",
-		"I have to avoid these bushes jumping over them (pressing 'W' from keyboard)",
-		"Let's go home! (HINT! Collect stars to get points!)"
+		"I am a black cat, free to roam outside whenever I want. Chasing butterflies is my favorite thing!",
+		"I never wander far from the garden… but this time, I followed one a little too eagerly.",
+		"The sun is setting, and the forest is growing darker. Too many things here could end my journey.",
+		"I must hurry back home.",
+		"Up ahead, sharp thorny bushes block my path. One wrong step, and I could get badly hurt.",
+		"I need to jump over them to stay alive. (Press 'W' to jump)",
+		"Home is still far away… but I have to keep going.)"
 		 }
 		 },{ "level2", new string[] {
-		"It is getting late, and the home is still far away.",
-		"I see that hawks have risen to the sky. I wish they do not notice me!",
-		"(Dodge hawks by crawling, pressing 'S' from keyboard)"
+		"It is getting late, and my paws are tired. Home still feels so far away.",
+		"I hear wings above me… hawks are circling the sky.",
+		"If they spot me, I will not stand a chance.",
+		"I must stay low and move carefully to survive. (Press 'S' to crawl)"
 		}
 		},{ "level3", new string[] {
-			"Home is close!",
-			"Oh... Wait. There is foxes ahead! I have two options to survive from them.",
-			"I need to either protect my self (pressing ´space´), or jump over them (pressing 'w')",
-			"I wish I can make it back home. (HINT!: Hittig foxes give you extra points!)"
+		"I can smell home now. I am so close.",
+		"But something is wrong… foxes are lurking ahead.",
+		"They are fast and dangerous, but I will not give up now.",
+		"I can fight back, or leap over them to escape. (Press 'Space' to attack, or 'W' to jump)",
+		"If I survive this, I will finally make it home."
 		}
 	}
 };
@@ -45,6 +47,9 @@ public partial class Levels : Node2D
 	private Panel _panel;
 
 	private Action _onFinishedCallback;
+
+	private bool _isTyping = false;
+	private float _typingSpeed = 0.03f;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -62,7 +67,7 @@ public partial class Levels : Node2D
 		_infoLabel = GetNode<Label>("%Info");
 
 		_nextButton = GetNode<TextureButton>("%Next");
-		_nextButton.Pressed += () => getDialogy();
+		_nextButton.Pressed += () => getDialogy(true);
 
 		ShowLevelInfo();
 	}
@@ -83,33 +88,50 @@ public partial class Levels : Node2D
 		_infoID = "level" + _levelnumber.ToString();
 
 		_levelLabel.Text = "Level: " + _levelnumber.ToString();
-		getDialogy();
+		getDialogy(false);
 	}
 
-	public async void getDialogy()
-	{
-		_soundEffect.Play();
-		await ToSignal(GetTree().CreateTimer(0.1f), "timeout");
-		string[] sentences = _LEVEL_INFOS[_infoID];
+	public async void getDialogy(bool playSound = true)
+{
+    // Estä spämmi
+    if (_isTyping)
+        return;
 
-		if (_infoSentenceIDx < sentences.Length)
-		{
-			_infoLabel.Text = (sentences[_infoSentenceIDx]);
-			_infoSentenceIDx++;
-		}
-		else
-		{
-			_levelContainer.Visible = false;
-			_infoContainer.Visible = false;
-			_panel.Visible = false;
+	if (playSound)
+        _soundEffect.Play();
 
-			if (_infoID == "level1")
-				EmitSignal(SignalName.LevelInfoFinished);
-			else
-				_onFinishedCallback?.Invoke();
+    string[] sentences = _LEVEL_INFOS[_infoID];
 
-		}
-	}
+    // Jos dialogi loppui
+    if (_infoSentenceIDx >= sentences.Length)
+    {
+        _infoLabel.Text = "";
+        _levelContainer.Visible = false;
+        _infoContainer.Visible = false;
+        _panel.Visible = false;
+
+        if (_infoID == "level1")
+            EmitSignal(SignalName.LevelInfoFinished);
+        else
+            _onFinishedCallback?.Invoke();
+
+        return;
+    }
+
+    _isTyping = true;
+    _infoLabel.Text = "";
+
+    string sentence = sentences[_infoSentenceIDx];
+    _infoSentenceIDx++;
+
+    foreach (char c in sentence)
+    {
+        _infoLabel.Text += c;
+        await ToSignal(GetTree().CreateTimer(_typingSpeed), "timeout");
+    }
+
+    _isTyping = false;
+}
 
 	public void ShowNextLevelInfo(Action onFinished)
 	{

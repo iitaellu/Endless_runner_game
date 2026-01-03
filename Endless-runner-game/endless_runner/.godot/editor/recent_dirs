@@ -1,5 +1,7 @@
-res://Scripts
+res://icons/graphics
+res://icons/graphics/idle
 res://Scenes
+res://Scripts
 res://
 res://collisionShapes/obstacles
 res://collisionShapes/player

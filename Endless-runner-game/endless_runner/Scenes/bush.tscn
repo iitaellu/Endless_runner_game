@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bvjm5plf66fvj"]
 
 [ext_resource type="Script" path="res://Scripts/Bush.cs" id="1_fuk2j"]
-[ext_resource type="Texture2D" uid="uid://cmx4j0b03eqnk" path="res://icons/graphics/bush/bush.png" id="2_qb8ue"]
+[ext_resource type="Texture2D" uid="uid://cvpv3utvdg668" path="res://icons/graphics/bush/bush6.png" id="2_gd7mr"]
 [ext_resource type="Shape2D" uid="uid://54nuddxra5t0" path="res://collisionShapes/obstacles/bushCollisionShape.tres" id="3_wxlen"]
 [ext_resource type="AudioStream" uid="uid://dadkwfy3rst4a" path="res://Music/sounds/bushhitwav-14661.mp3" id="4_swdqq"]
 
@@ -10,12 +10,12 @@ collision_layer = 4
 script = ExtResource("1_fuk2j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -5.5)
-scale = Vector2(1, 1.17742)
-texture = ExtResource("2_qb8ue")
+position = Vector2(-2.30152, -5.3534)
+scale = Vector2(0.976717, 1.04705)
+texture = ExtResource("2_gd7mr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -2)
+position = Vector2(-3, 1.5)
 shape = ExtResource("3_wxlen")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

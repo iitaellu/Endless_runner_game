@@ -8,6 +8,8 @@ public partial class GlobalScore : Node
 	public int Currentcore { get; private set; } = 0;
 
 	public List<int> TopScores { get; private set; } = new List<int>() { 0, 0, 0 };
+
+	public int LastScoreRank { get; private set; } = -1;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -32,9 +34,14 @@ public partial class GlobalScore : Node
     {
 		TopScores.Add(Currentcore);
 		TopScores.Sort((a, b) => b.CompareTo(a));
+		LastScoreRank = TopScores.IndexOf(Currentcore);
+
 		if (TopScores.Count > 3)
         {
 			TopScores.Remove(3);
         }
+		 // Jos ei päässyt top 3:een
+		if (LastScoreRank > 2)
+			LastScoreRank = -1;
     }
 }

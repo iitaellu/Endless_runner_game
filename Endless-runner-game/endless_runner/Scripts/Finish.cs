@@ -36,6 +36,20 @@ public partial class Finish : CanvasLayer
         _second.Text = $"2nd place: {scores[1]}";
         _third.Text = $"3rd place: {scores[2]}";
 
+		//Highlight current score
+		switch (_globalScore.LastScoreRank)
+	{
+		case 0:
+			_first.Modulate = Colors.Red;
+			break;
+		case 1:
+			_second.Modulate = Colors.Red;
+			break;
+		case 2:
+			_third.Modulate = Colors.Red;
+			break;
+	}
+
 		_finishButton.Pressed += OnStartPressed;
 		_startAgainButton.Pressed += OnExitPressed;
     }
