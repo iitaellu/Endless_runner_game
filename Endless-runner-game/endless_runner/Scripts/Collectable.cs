@@ -35,26 +35,26 @@ public partial class Collectable : Area2D
 
 	private async void OnBodyEntered(Node body)
 	{
-		if (body is Player player)
-		{
+		if (body is not Player)
+			return;
 
-			var soundPlayer = GetNode<AudioStreamPlayer2D>("/root/Main/Player/AudioStreamPlayer2D");
-			soundPlayer.Stream = _collectStream;
-			soundPlayer.Play();
-			/*_soundEffect.Stream = _collectStream;
-			_soundEffect.Play();*/
+		// Add points
+		var ui = GetNode<Ui>("/root/Main/UI");
+		ui.AddPoints(10);
+		GetNode<GlobalScore>("/root/GlobalScore").AddScore(10);
 
-			var ui = GetNode<Ui>("/root/Main/UI");
-			ui.AddPoints(10);
-			GetNode<GlobalScore>("/root/GlobalScore").AddScore(10);
+		// Disable interaction instantly
+		_collisionShape2D.SetDeferred("disabled", true);
+		_animatedSprite2D.Visible = false;
 
-				// Hide instantly
-			Visible = false;
-			_collisionShape2D.SetDeferred("disabled", true);   // so it won't collide again
+		// Play collect sound FROM THIS OBJECT
+		_soundEffect.Stream = _collectStream;
+		_soundEffect.Play();
 
-			await ToSignal(_soundEffect, "finished");
-			QueueFree(); // disappear immediately
-		}
+		// Wait for sound to finish
+		await ToSignal(_soundEffect, AudioStreamPlayer2D.SignalName.Finished);
+
+		QueueFree();
 	}
 
 	public void getPoints()

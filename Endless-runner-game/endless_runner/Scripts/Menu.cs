@@ -36,7 +36,7 @@ public partial class Menu : Node
 	{
 		_soundEffect.Play();
 		await ToSignal(GetTree().CreateTimer(0.1f), "timeout");
-		GetTree().ChangeSceneToFile("res://Scenes/intro.tscn");
+		GetTree().ChangeSceneToFile("res://Scenes/Intro.tscn");
 	}
 	private async void OnExitPressed()
 	{
@@ -45,12 +45,12 @@ public partial class Menu : Node
 		GetTree().Quit();
 	}
 	private async void OnCreditsPressed()
-    {
+	{
 		_soundEffect.Play();
 		await ToSignal(GetTree().CreateTimer(0.1f), "timeout");
 		_credits.Visible = true;
-        
-    }
+		
+	}
 
 
 	public override void _Process(double delta)

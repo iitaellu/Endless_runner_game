@@ -17,11 +17,11 @@ public partial class Intro : Node
 	}
 
 	 private async void OnStartPressed()
-    {
+	{
 		_soundEffect.Play();
 		await ToSignal(GetTree().CreateTimer(0.1f), "timeout");
 		GetTree().ChangeSceneToFile("res://Scenes/main.tscn");
-    }
+	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)

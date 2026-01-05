@@ -50,6 +50,9 @@ public partial class Levels : Node2D
 
 	private bool _isTyping = false;
 	private float _typingSpeed = 0.03f;
+	
+	private bool _skipRequested = false;
+	private string _currentSentence = "";
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -67,7 +70,7 @@ public partial class Levels : Node2D
 		_infoLabel = GetNode<Label>("%Info");
 
 		_nextButton = GetNode<TextureButton>("%Next");
-		_nextButton.Pressed += () => getDialogy(true);
+		_nextButton.Pressed += OnNextPressed;
 
 		ShowLevelInfo();
 	}
@@ -91,46 +94,65 @@ public partial class Levels : Node2D
 		getDialogy(false);
 	}
 
+private void OnNextPressed()
+{
+	if (_isTyping)
+	{
+		_skipRequested = true;
+		_soundEffect.Play();
+	}
+	else
+	{
+		getDialogy(true);
+	}
+}
+
 	public async void getDialogy(bool playSound = true)
 {
-    // Estä spämmi
-    if (_isTyping)
-        return;
+	// Estä spämmi
+	if (_isTyping)
+		return;
 
 	if (playSound)
-        _soundEffect.Play();
+		_soundEffect.Play();
 
-    string[] sentences = _LEVEL_INFOS[_infoID];
+	string[] sentences = _LEVEL_INFOS[_infoID];
 
-    // Jos dialogi loppui
-    if (_infoSentenceIDx >= sentences.Length)
-    {
-        _infoLabel.Text = "";
-        _levelContainer.Visible = false;
-        _infoContainer.Visible = false;
-        _panel.Visible = false;
+	// Jos dialogi loppui
+	if (_infoSentenceIDx >= sentences.Length)
+	{
+		_infoLabel.Text = "";
+		_levelContainer.Visible = false;
+		_infoContainer.Visible = false;
+		_panel.Visible = false;
 
-        if (_infoID == "level1")
-            EmitSignal(SignalName.LevelInfoFinished);
-        else
-            _onFinishedCallback?.Invoke();
+		if (_infoID == "level1")
+			EmitSignal(SignalName.LevelInfoFinished);
+		else
+			_onFinishedCallback?.Invoke();
 
-        return;
-    }
+		return;
+	}
 
-    _isTyping = true;
-    _infoLabel.Text = "";
+	_isTyping = true;
+	_skipRequested = false;
+	_infoLabel.Text = "";
 
-    string sentence = sentences[_infoSentenceIDx];
-    _infoSentenceIDx++;
+	_currentSentence = sentences[_infoSentenceIDx];
+	_infoSentenceIDx++;
 
-    foreach (char c in sentence)
-    {
-        _infoLabel.Text += c;
-        await ToSignal(GetTree().CreateTimer(_typingSpeed), "timeout");
-    }
+	foreach (char c in _currentSentence)
+	{
+		if (_skipRequested)
+		{
+			_infoLabel.Text = _currentSentence;
+			break;
+		}
+		_infoLabel.Text += c;
+		await ToSignal(GetTree().CreateTimer(_typingSpeed), "timeout");
+	}
 
-    _isTyping = false;
+	_isTyping = false;
 }
 
 	public void ShowNextLevelInfo(Action onFinished)
@@ -146,4 +168,3 @@ public partial class Levels : Node2D
 
 	}
 }
-
