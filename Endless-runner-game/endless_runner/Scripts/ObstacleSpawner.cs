@@ -231,6 +231,8 @@ public partial class ObstacleSpawner : Node
 
 	public void ResumeSpawning()
 	{
+
+		
 		if (!_obstaclespawnTimer.IsStopped())
 		{
 			GD.Print("Spawners already running.");

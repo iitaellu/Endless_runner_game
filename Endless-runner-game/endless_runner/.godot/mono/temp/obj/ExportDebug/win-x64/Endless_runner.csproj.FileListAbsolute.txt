@@ -1,7 +1,6 @@
 C:\Users\Ida\Documents\GitHub\Endless_runner_game\Endless-runner-game\endless_runner\.godot\mono\temp\bin\ExportDebug\win-x64\Endless_runner.deps.json
 C:\Users\Ida\Documents\GitHub\Endless_runner_game\Endless-runner-game\endless_runner\.godot\mono\temp\bin\ExportDebug\win-x64\Endless_runner.runtimeconfig.json
 C:\Users\Ida\Documents\GitHub\Endless_runner_game\Endless-runner-game\endless_runner\.godot\mono\temp\bin\ExportDebug\win-x64\Endless_runner.dll
-C:\Users\Ida\Documents\GitHub\Endless_runner_game\Endless-runner-game\endless_runner\.godot\mono\temp\bin\ExportDebug\win-x64\Endless_runner.pdb
 C:\Users\Ida\Documents\GitHub\Endless_runner_game\Endless-runner-game\endless_runner\.godot\mono\temp\bin\ExportDebug\win-x64\GodotSharp.dll
 C:\Users\Ida\Documents\GitHub\Endless_runner_game\Endless-runner-game\endless_runner\.godot\mono\temp\bin\ExportDebug\win-x64\Microsoft.CSharp.dll
 C:\Users\Ida\Documents\GitHub\Endless_runner_game\Endless-runner-game\endless_runner\.godot\mono\temp\bin\ExportDebug\win-x64\Microsoft.VisualBasic.Core.dll
@@ -230,10 +229,8 @@ C:\Users\Ida\Documents\GitHub\Endless_runner_game\Endless-runner-game\endless_ru
 C:\Users\Ida\Documents\GitHub\Endless_runner_game\Endless-runner-game\endless_runner\.godot\mono\temp\obj\ExportDebug\win-x64\Endless_runner.AssemblyInfoInputs.cache
 C:\Users\Ida\Documents\GitHub\Endless_runner_game\Endless-runner-game\endless_runner\.godot\mono\temp\obj\ExportDebug\win-x64\Endless_runner.AssemblyInfo.cs
 C:\Users\Ida\Documents\GitHub\Endless_runner_game\Endless-runner-game\endless_runner\.godot\mono\temp\obj\ExportDebug\win-x64\Endless_runner.csproj.CoreCompileInputs.cache
-C:\Users\Ida\Documents\GitHub\Endless_runner_game\Endless-runner-game\endless_runner\.godot\mono\temp\obj\ExportDebug\win-x64\Endless_runner.sourcelink.json
 C:\Users\Ida\Documents\GitHub\Endless_runner_game\Endless-runner-game\endless_runner\.godot\mono\temp\obj\ExportDebug\win-x64\Endless_.3CEE6913.Up2Date
 C:\Users\Ida\Documents\GitHub\Endless_runner_game\Endless-runner-game\endless_runner\.godot\mono\temp\obj\ExportDebug\win-x64\Endless_runner.dll
 C:\Users\Ida\Documents\GitHub\Endless_runner_game\Endless-runner-game\endless_runner\.godot\mono\temp\obj\ExportDebug\win-x64\refint\Endless_runner.dll
-C:\Users\Ida\Documents\GitHub\Endless_runner_game\Endless-runner-game\endless_runner\.godot\mono\temp\obj\ExportDebug\win-x64\Endless_runner.pdb
 C:\Users\Ida\Documents\GitHub\Endless_runner_game\Endless-runner-game\endless_runner\.godot\mono\temp\obj\ExportDebug\win-x64\Endless_runner.genruntimeconfig.cache
 C:\Users\Ida\Documents\GitHub\Endless_runner_game\Endless-runner-game\endless_runner\.godot\mono\temp\obj\ExportDebug\win-x64\ref\Endless_runner.dll

@@ -21,6 +21,9 @@ public partial class Fox : StaticBody2D
 
 	public bool IsDefeated => _isDefeated;
 
+	private RectangleShape2D _dieShape = GD.Load<RectangleShape2D>("res://collisionShapes/obstacles/fox.tres");
+	private RectangleShape2D _runShape = GD.Load<RectangleShape2D>("res://collisionShapes/obstacles/foxRun.tres");
+
 	public override void _Ready()
 	{
 
@@ -29,6 +32,7 @@ public partial class Fox : StaticBody2D
 		_animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		_visibleOnScreenNotifier2D = GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
 		_collisionShape2D = GetNode<CollisionShape2D>("CollisionShape2D");
+		_collisionShape2D.Shape = _runShape;
 		_soundEffect = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
 		_visibleOnScreenNotifier2D.ScreenExited += OnScreenExcited;
 
@@ -60,7 +64,10 @@ public partial class Fox : StaticBody2D
 {
     if (_isDefeated) return; // Already hit
     _isDefeated = true;
+	_collisionShape2D.Shape = _dieShape;
     _collisionShape2D.SetDeferred("disabled", true);
+	_collisionShape2D.Shape = _dieShape;
+	_animatedSprite2D.Play("death");
     _animatedSprite2D.Modulate = new Color(1, 0.5f, 0.5f); // if you have a hit animation
 	stop();
 	var ui = GetNode<Ui>("/root/Main/UI");

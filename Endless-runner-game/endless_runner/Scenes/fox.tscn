@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ct6d6hittfski"]
+[gd_scene load_steps=10 format=3 uid="uid://ct6d6hittfski"]
 
 [ext_resource type="Script" path="res://Scripts/Fox.cs" id="1_na6hq"]
 [ext_resource type="Texture2D" uid="uid://cu247ughxeopc" path="res://icons/graphics/fox/fox run 1 pig.png" id="2_3itje"]
@@ -6,9 +6,19 @@
 [ext_resource type="Texture2D" uid="uid://duvaoasw5nee5" path="res://icons/graphics/fox/fox run 3 pig.png" id="4_6i0ng"]
 [ext_resource type="Texture2D" uid="uid://csiv16wc7anf7" path="res://icons/graphics/fox/fox run 4 pig.png" id="5_g06am"]
 [ext_resource type="AudioStream" uid="uid://dalcg3yenx7h" path="res://Music/sounds/single-bark-of-a-dog-38780.mp3" id="6_dkf5d"]
+[ext_resource type="Texture2D" uid="uid://cblw2thl0k21u" path="res://icons/graphics/fox/foxDeath.png" id="6_vgv1h"]
+[ext_resource type="Shape2D" uid="uid://bnk0bt34cgfvn" path="res://collisionShapes/obstacles/fox.tres" id="7_sjlmj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b65qb"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_vgv1h")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_3itje")
@@ -27,9 +37,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxfkd"]
-size = Vector2(114, 64)
-
 [node name="Fox" type="StaticBody2D"]
 collision_layer = 4
 collision_mask = 3
@@ -37,12 +44,13 @@ script = ExtResource("1_na6hq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b65qb")
+animation = &"death"
 autoplay = "default"
-frame_progress = 0.621065
+frame_progress = 0.287039
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(9, 6)
-shape = SubResource("RectangleShape2D_gxfkd")
+position = Vector2(9, -8.5)
+shape = ExtResource("7_sjlmj")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 

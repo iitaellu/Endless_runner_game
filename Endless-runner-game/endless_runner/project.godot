@@ -13,11 +13,16 @@ config_version=5
 config/name="Outdoor Cat"
 run/main_scene="res://Scenes/Menu.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
+run/flush_stdout_on_print.debug=false
 config/icon="res://icons/graphics/header.png"
 
 [autoload]
 
 GlobalScore="*res://Scripts/GlobalScore.cs"
+
+[debug]
+
+settings/stdout/verbose_stdout=true
 
 [dotnet]
 

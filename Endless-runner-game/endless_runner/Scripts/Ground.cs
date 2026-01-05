@@ -89,7 +89,8 @@ public partial class Ground : Node2D
 	{
 		_speed = 0;
 		_forest.SetScrollSpeed(0);
-		_obstacleSpawner.QueueFree();
+		_obstacleSpawner.PauseSpawning();
+		_obstacleSpawner.SetProcess(false);
 
 		// täällä game over UI
 	}
@@ -98,9 +99,11 @@ public partial class Ground : Node2D
 	{
 		_speed = 0;
 		_forest.SetScrollSpeed(0);
-		_obstacleSpawner.QueueFree();
-
-		// EI game over UI:ta
+		if (IsInstanceValid(_obstacleSpawner))
+		{
+			_obstacleSpawner.PauseSpawning();
+			_obstacleSpawner.SetProcess(false);
+		}
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

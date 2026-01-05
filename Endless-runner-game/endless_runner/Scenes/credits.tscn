@@ -32,9 +32,13 @@ text = "GAME DESIGNER: Ida Kirveskoski
 
 GAME DEVELOPER: Ida Kirveskoski
 
-GRAPHIC DESIGNER: Ida Kirveskoski
+PROGRAMMER: Ida Kirveskoski
 
-MUSIC DESIGNER: Ida Kirveskoski
+INSPIRATION & LEARNING RESOURCES: CyberPotato,
+Godot 4 T-Rex Endless Runner Game - Complete Game Tutorial 
+from YouTube
+
+GRAPHIC DESIGNER & ARTIST: Ida Kirveskoski
 
 MUSIC:
 Forest Walk by Alexander Nakarada | https://creatorchords.com
@@ -82,7 +86,9 @@ Single bark of a dog, freesound_community,
 Sound Effect by freesound_community from Pixabay
 
 Analog Appliance Button 15, floraphonic,
-Sound Effect by floraphonic from Pixabay"
+Sound Effect by floraphonic from Pixabay
+
+ENGINE: Godot 4"
 clip_text = true
 
 [node name="CreditsContainer" type="VBoxContainer" parent="."]
