@@ -15,7 +15,7 @@ Run windows exe:
 
 4. follow path: DesktopVersion -> Outdoor Cat Game.exe
 
-5. If Windows defender pops up: read more / more information -> Run anyway
+5. If "Windows protected your PC" pops up: More info -> Run anyway
 
 Or run in Godot 4.3 .Net:
 
