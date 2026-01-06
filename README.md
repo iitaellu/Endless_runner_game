@@ -7,15 +7,15 @@ Whole repository and either:
 
 Run windows exe:
 
-1. Down load .zip file from "code" tab
+1. Down load .zip file from "code" tab.
 
-2. Open your file Management system, and open "downloads"
+2. Open your file Management system, and open "downloads".
 
 3. extract the .zip file to a location of your choice.
 
-4. follow path: DesktopVersion -> Outdoor Cat Game.exe
+4. follow path: DesktopVersion -> Outdoor Cat Game.exe.
 
-5. If "Windows protected your PC" pops up: More info -> Run anyway
+5. if "Windows protected your PC" pops up: More info -> Run anyway.
 
 Or run in Godot 4.3 .Net:
 
