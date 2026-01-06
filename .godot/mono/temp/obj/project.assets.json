@@ -94,11 +94,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ida\\Documents\\GitHub\\Endless_runner_game\\endless_runner\\Endless_runner.csproj",
+      "projectUniqueName": "C:\\Users\\Ida\\Documents\\GitHub\\Endless_runner_game\\Endless_runner.csproj",
       "projectName": "Endless_runner",
-      "projectPath": "C:\\Users\\Ida\\Documents\\GitHub\\Endless_runner_game\\endless_runner\\Endless_runner.csproj",
+      "projectPath": "C:\\Users\\Ida\\Documents\\GitHub\\Endless_runner_game\\Endless_runner.csproj",
       "packagesPath": "C:\\Users\\Ida\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ida\\Documents\\GitHub\\Endless_runner_game\\endless_runner\\.godot\\mono\\temp\\obj\\",
+      "outputPath": "C:\\Users\\Ida\\Documents\\GitHub\\Endless_runner_game\\.godot\\mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

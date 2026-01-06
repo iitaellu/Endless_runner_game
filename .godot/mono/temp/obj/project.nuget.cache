@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wpD94wPzBwA=",
+  "dgSpecHash": "nSPkm9FcfNY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ida\\Documents\\GitHub\\Endless_runner_game\\endless_runner\\Endless_runner.csproj",
+  "projectFilePath": "C:\\Users\\Ida\\Documents\\GitHub\\Endless_runner_game\\Endless_runner.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ida\\.nuget\\packages\\godot.sourcegenerators\\4.3.0\\godot.sourcegenerators.4.3.0.nupkg.sha512",
     "C:\\Users\\Ida\\.nuget\\packages\\godotsharp\\4.3.0\\godotsharp.4.3.0.nupkg.sha512",
