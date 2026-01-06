@@ -2,8 +2,6 @@
 ![!image](https://github.com/iitaellu/Endless_runner_game/blob/main/icons/graphics/backgrounds/menu..png)
 Outdoor Cat is Chrome T-rex game like endless 2D runner game where player helps cat who is wondered too far from safty home to the dangerous forest. In each level, a new threat threatens the Cat's life. Cat must dodche and attack to survive back to home.
 
-Play the game in online: coming soon
-
 # Local Run
 Whole repository and either:
 
@@ -16,6 +14,8 @@ Run windows exe:
 3. extract the .zip file to a location of your choice.
 
 4. follow path: DesktopVersion -> Outdoor Cat Game.exe
+
+5. If Windows defender pops up: read more / more information -> Run anyway
 
 Or run in Godot 4.3 .Net:
 
@@ -48,4 +48,4 @@ Art: iitaellu with Krita
 Sounds: collected from Pixabay and Chosic. All listed in credits
 
 Game was inspired by: CyberPotato's YouTube video "Godot 4 T-Rex Endless Runner Game - Complete Game Tutorial
-"
+"https://www.youtube.com/watch?v=THauvoHBKLk"
