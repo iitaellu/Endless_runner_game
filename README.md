@@ -7,29 +7,36 @@ https://lut-my.sharepoint.com/:v:/g/personal/ida_kirveskoski_student_lut_fi/IQAk
 
 # Local Run (Playable version for Windows)
 
+** Option 1 (Recommendation) **
+
+As a released executable
+
 1. Download the ZIP file from https://github.com/iitaellu/Endless_runner_game/releases/latest clicking "OutDoorCatgame.zip"
 2. Extract it
 3. Navigate into the "DesktopVersion" folder
 4. Run "Out Door Cat Game.exe"
 
+** Option 2 **
 
-Run windows exe:
+From source code
 
 1. Download the .zip file from the "code" tab to a folder of your choice. (downloading might tike a while)
-
 2. Open your file Management system, and open the folder where you downloaded .zip file.
-
 3. Extract the .zip file to a location of your choice.
-
 4. Follow path: DesktopVersion -> Outdoor Cat Game.exe.
-
 5. If "Windows protected your PC" pops up: More info -> Run anyway.
 
-Or run in Godot 4.3 .Net:
+** Option 3 **
 
-1. Open Godot 4.3 .Net version
-2. Import the file
-3. Run
+Run in Godot 4.3 .Net:
+
+1. Download the .zip file from the "code" tab to a folder of your choice. (downloading might tike a while)
+2. Open your file Management system, and open the folder where you downloaded .zip file.
+3. Extract the .zip file to a location of your choice.
+4. Open Godot 4.3 .Net version
+5. Import the file from the location you extracted the .zip file
+6. Open project
+7. Run
 
 
 # Gameplay
