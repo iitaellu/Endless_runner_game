@@ -6,19 +6,18 @@ Outdoor Cat is Chrome T-rex game like endless 2D runner game where player helps 
 https://lut-my.sharepoint.com/:v:/g/personal/ida_kirveskoski_student_lut_fi/IQAk-guvIr0uTKBHe2sn8_tQAVQEup6FJ2wmBR38sDYCN8U?e=jJfbWV
 
 # Local Run
-Whole repository and either:
 
 Run windows exe:
 
-1. Down load .zip file from "code" tab.
+1. Download the .zip file from the "code" tab to a folder of your choice. (downloading might tike a while)
 
-2. Open your file Management system, and open "downloads".
+2. Open your file Management system, and open the folder where you downloaded .zip file.
 
-3. extract the .zip file to a location of your choice.
+3. Extract the .zip file to a location of your choice.
 
-4. follow path: DesktopVersion -> Outdoor Cat Game.exe.
+4. Follow path: DesktopVersion -> Outdoor Cat Game.exe.
 
-5. if "Windows protected your PC" pops up: More info -> Run anyway.
+5. If "Windows protected your PC" pops up: More info -> Run anyway.
 
 Or run in Godot 4.3 .Net:
 
