@@ -2,6 +2,9 @@
 ![!image](https://github.com/iitaellu/Endless_runner_game/blob/main/icons/graphics/backgrounds/menu..png)
 Outdoor Cat is Chrome T-rex game like endless 2D runner game where player helps cat who is wondered too far from safty home to the dangerous forest. In each level, a new threat threatens the Cat's life. Cat must dodche and attack to survive back to home.
 
+# Advertising video
+https://lut-my.sharepoint.com/:v:/g/personal/ida_kirveskoski_student_lut_fi/IQAk-guvIr0uTKBHe2sn8_tQAVQEup6FJ2wmBR38sDYCN8U?e=jJfbWV
+
 # Local Run
 Whole repository and either:
 
