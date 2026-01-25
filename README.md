@@ -7,7 +7,7 @@ https://lut-my.sharepoint.com/:v:/g/personal/ida_kirveskoski_student_lut_fi/IQAk
 
 # Local Run (Playable version for Windows)
 
-**Option 1 (Recommendation)**
+**Option 1 (Recommended)**
 
 As a released executable
 
