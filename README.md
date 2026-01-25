@@ -7,10 +7,9 @@ https://lut-my.sharepoint.com/:v:/g/personal/ida_kirveskoski_student_lut_fi/IQAk
 
 # Local Run (Playable version for Windows)
 
-1. **Download (Windows executable):** https://github.com/iitaellu/Endless_runner_game/releases/latest
-2. Download the ZIP file
-3. Extract it
-4. Run "Out Door Cat Game.exe"
+1. Download the ZIP file from https://github.com/iitaellu/Endless_runner_game/releases/latest clicking "OutDoorCatgame.zip"
+2. Extract it
+3. Run "Out Door Cat Game.exe"
 
 
 Run windows exe:
