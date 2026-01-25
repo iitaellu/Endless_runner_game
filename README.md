@@ -15,6 +15,7 @@ As a released executable
 2. Extract it
 3. Navigate into the "DesktopVersion" folder
 4. Run "Out Door Cat Game.exe"
+5. If "Windows protected your PC" pops up: More info -> Run anyway.
 
 **Option 2**
 
