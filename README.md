@@ -5,7 +5,13 @@ Outdoor Cat is Chrome T-rex game like endless 2D runner game where player helps 
 # Advertising video
 https://lut-my.sharepoint.com/:v:/g/personal/ida_kirveskoski_student_lut_fi/IQAk-guvIr0uTKBHe2sn8_tQAVQEup6FJ2wmBR38sDYCN8U?e=jJfbWV
 
-# Local Run
+# Local Run (Playable version for Windows)
+
+1. **Download (Windows executable):** https://github.com/iitaellu/Endless_runner_game/releases/latest
+2. Download the ZIP file
+3. Extract it
+4. Run "Out Door Cat Game.exe"
+
 
 Run windows exe:
 
