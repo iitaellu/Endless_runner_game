@@ -7,7 +7,7 @@ https://lut-my.sharepoint.com/:v:/g/personal/ida_kirveskoski_student_lut_fi/IQAk
 
 # Local Run (Playable version for Windows)
 
-** Option 1 (Recommendation) **
+**Option 1 (Recommendation)**
 
 As a released executable
 
@@ -16,7 +16,7 @@ As a released executable
 3. Navigate into the "DesktopVersion" folder
 4. Run "Out Door Cat Game.exe"
 
-** Option 2 **
+**Option 2**
 
 From source code
 
@@ -26,7 +26,7 @@ From source code
 4. Follow path: DesktopVersion -> Outdoor Cat Game.exe.
 5. If "Windows protected your PC" pops up: More info -> Run anyway.
 
-** Option 3 **
+**Option 3**
 
 Run in Godot 4.3 .Net:
 
